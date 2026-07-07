@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "title": "Your Name | Frontend Developer",
+    "description": "Personal portfolio showcasing frontend projects, experience, and education.",
+    "siteName": "Your Name Portfolio",
+    "ogImageAlt": "Personal portfolio preview image"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
+    "main": "Main navigation",
+    "mobile": "Mobile navigation"
+  },
+  "hero": {
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "contact": "Get in touch",
+    "imageAlt": "Profile photo of {name}"
+  },
+  "about": {
+    "title": "About me"
+  },
+  "projects": {
+    "title": "Projects",
+    "liveDemo": "Live demo",
+    "viewCode": "View code"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I work with and keep learning.",
+    "categorySkills": "{category} skills"
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk.",
+    "email": "Email",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
+    "social": "Social",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSubmit": "Send message",
+    "downloadCv": "Download CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "github": "Visit GitHub profile",
+    "linkedin": "Visit LinkedIn profile"
+  },
+  "language": {
+    "switchToEs": "Switch to Spanish",
+    "switchToEn": "Switch to English"
+  },
+  "theme": {
+    "light": "Enable light mode",
+    "dark": "Enable dark mode"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "homeLink": "Go to home"
+  }
+}

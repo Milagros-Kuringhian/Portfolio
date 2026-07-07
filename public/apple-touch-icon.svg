@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Portfolio">
+  <rect width="180" height="180" rx="40" fill="#C4714A"/>
+  <path
+    d="M56 50h48c18.5 0 31 11.2 31 28.7 0 13.5-6.7 22.5-18 27L124 130H85l-7.8-20.2H72V130H56V50zm18 16.8v30.4h27c9 0 14.5-5 14.5-15.2S110 67.8 101 67.8H74z"
+    fill="#FCF9F4"
+  />
+</svg>

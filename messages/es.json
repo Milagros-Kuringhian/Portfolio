@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "title": "Tu Nombre | Desarrollador/a Frontend",
+    "description": "Portfolio personal con proyectos, experiencia y formación en desarrollo frontend.",
+    "siteName": "Portfolio de Tu Nombre",
+    "ogImageAlt": "Vista previa del portfolio personal"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "contact": "Contacto",
+    "menu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "main": "Navegación principal",
+    "mobile": "Navegación móvil"
+  },
+  "hero": {
+    "viewProjects": "Ver proyectos",
+    "downloadCv": "Descargar CV",
+    "contact": "Contactar",
+    "imageAlt": "Foto de perfil de {name}"
+  },
+  "about": {
+    "title": "Sobre mí"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "liveDemo": "Demo en vivo",
+    "viewCode": "Ver código"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Tecnologías y herramientas con las que trabajo y sigo aprendiendo.",
+    "categorySkills": "Habilidades de {category}"
+  },
+  "experience": {
+    "title": "Experiencia"
+  },
+  "education": {
+    "title": "Educación"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? Escríbeme.",
+    "email": "Email",
+    "copyEmail": "Copiar email",
+    "copied": "¡Copiado!",
+    "social": "Redes",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formMessage": "Mensaje",
+    "formSubmit": "Enviar mensaje",
+    "downloadCv": "Descargar CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "github": "Visitar perfil de GitHub",
+    "linkedin": "Visitar perfil de LinkedIn"
+  },
+  "language": {
+    "switchToEs": "Cambiar a español",
+    "switchToEn": "Cambiar a inglés"
+  },
+  "theme": {
+    "light": "Activar modo claro",
+    "dark": "Activar modo oscuro"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "homeLink": "Ir al inicio"
+  }
+}

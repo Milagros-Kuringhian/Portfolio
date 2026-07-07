@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-label="Portfolio preview">
+  <rect width="1200" height="630" fill="#F5F0E8"/>
+  <rect x="80" y="80" width="1040" height="470" rx="32" fill="#FCF9F4" stroke="#E0D8CE" stroke-width="2"/>
+  <circle cx="220" cy="315" r="96" fill="#C4714A" opacity="0.15"/>
+  <circle cx="220" cy="315" r="72" fill="#C4714A"/>
+  <text x="220" y="330" text-anchor="middle" fill="#FCF9F4" font-family="Georgia, serif" font-size="56" font-weight="600">P</text>
+  <text x="360" y="280" fill="#2C2825" font-family="Georgia, serif" font-size="56" font-weight="600">Portfolio</text>
+  <text x="360" y="340" fill="#524C47" font-family="system-ui, sans-serif" font-size="28">Frontend Developer</text>
+  <rect x="360" y="380" width="180" height="8" rx="4" fill="#7A9E7E"/>
+  <rect x="560" y="380" width="120" height="8" rx="4" fill="#C4714A" opacity="0.6"/>
+</svg>
