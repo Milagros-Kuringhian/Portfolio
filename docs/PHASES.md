@@ -230,11 +230,13 @@ Implementar en `components/sections/`. Cada sección debe cumplir criterios del 
 > Publicar el portfolio en internet.
 
 - [ ] Crear repositorio en GitHub
-- [ ] Push del código
+- [ ] Push del código *(commit listo en `main`; falta `git remote` + push)*
 - [ ] Conectar repo con Vercel
 - [ ] Verificar deploy en URL de preview
 - [ ] Configurar dominio personal (opcional)
 - [ ] Probar sitio en producción: idiomas, temas, links, CV
+
+**Preparado localmente:** `.env.example`, guía de deploy en `README.md`, build verificado.
 
 **Criterio de listo:** Portfolio accesible públicamente en una URL.
 
