@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
+import { SectionHeader } from "@/components/layout/SectionHeader";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SkillsMarquee } from "@/components/sections/SkillsMarquee";
 import { skillCategories } from "@/data/skills";
@@ -15,15 +16,10 @@ export async function Skills({ locale }: SkillsProps) {
   return (
     <SectionReveal
       id="skills"
-      className="border-y border-border py-12 sm:py-16 md:py-20"
+      className="border-y border-border bg-muted/10 py-12 sm:py-16 md:py-20"
     >
-      <div className="mx-auto mb-10 flex w-full max-w-6xl flex-col gap-3 px-4 md:px-6">
-        <h2 className="font-heading text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl">
-          {t("title")}
-        </h2>
-        <p className="max-w-2xl text-muted-foreground">
-          {t("subtitle")}
-        </p>
+      <div className="mx-auto mb-10 flex w-full max-w-6xl flex-col px-4 md:px-6">
+        <SectionHeader title={t("title")} subtitle={t("subtitle")} />
       </div>
 
       <div className="flex flex-col gap-8">

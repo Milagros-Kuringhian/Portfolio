@@ -16,8 +16,12 @@ export async function Hero({ locale }: HeroProps) {
   return (
     <SectionReveal
       id="hero"
-      className="mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-8 px-4 py-12 sm:gap-10 sm:py-16 md:flex-row md:items-center md:justify-between md:px-6 md:py-24"
+      className="relative mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-8 overflow-hidden px-4 py-12 sm:gap-10 sm:py-16 md:flex-row md:items-center md:justify-between md:px-6 md:py-24"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,color-mix(in_oklch,var(--primary),transparent_82%)_0%,transparent_58%)]"
+      />
       <div className="flex w-full min-w-0 max-w-2xl flex-col gap-6">
         <div className="flex flex-col gap-3">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
@@ -38,7 +42,7 @@ export async function Hero({ locale }: HeroProps) {
           <Button
             className="w-full sm:w-auto"
             variant="outline"
-            render={<a href="/cv.pdf" download />}
+            render={<a href="/cv.pdf" download="cv.pdf" />}
           >
             {t("downloadCv")}
           </Button>
@@ -53,6 +57,10 @@ export async function Hero({ locale }: HeroProps) {
       </div>
 
       <div className="relative size-48 shrink-0 sm:size-56 md:size-72">
+        <div
+          aria-hidden
+          className="absolute -inset-3 rounded-[3.5rem_2rem_3.5rem_2rem] bg-secondary/20 blur-xl"
+        />
         <Image
           src={profile.image}
           alt={t("imageAlt", { name: profile.name })}

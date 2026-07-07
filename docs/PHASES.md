@@ -223,6 +223,8 @@ Implementar en `components/sections/`. Cada sección debe cumplir criterios del 
 
 **Criterio de listo:** Build de producción exitoso, README claro, checklist de RULES cumplido.
 
+**Estado:** Portfolio local **terminado** (fases 0–4). Placeholders listos para reemplazar en `data/` (PRD §6). Deploy pendiente (fase 5).
+
 ---
 
 ## Fase 5 — Deploy (opcional, cuando quieras)

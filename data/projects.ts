@@ -23,7 +23,6 @@ export const projects: Project[] = [
     },
     image: "/images/project-weather-app.svg",
     tech: ["HTML", "CSS", "JavaScript", "API"],
-    liveUrl: "https://example.com",
     githubUrl: "https://github.com",
   },
   {
@@ -43,16 +42,15 @@ export const projects: Project[] = [
   {
     id: "portfolio-v1",
     title: {
-      es: "Portfolio v1",
-      en: "Portfolio v1",
+      es: "Portfolio Personal",
+      en: "Personal Portfolio",
     },
     description: {
-      es: "Primera versión de mi portfolio personal con secciones de proyectos, contacto y modo oscuro.",
-      en: "First version of my personal portfolio with projects, contact, and dark mode.",
+      es: "Este sitio: portfolio bilingüe con modo claro/oscuro, animaciones sutiles y contenido editable desde data/.",
+      en: "This site: bilingual portfolio with light/dark mode, subtle animations, and content editable from data/.",
     },
     image: "/images/project-portfolio.svg",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://example.com",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com",
   },
 ];

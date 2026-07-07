@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -19,13 +19,69 @@ const navItems = [
   { href: "#contact", key: "contact" },
 ] as const;
 
+type NavKey = (typeof navItems)[number]["key"];
+
 export function Header() {
   const t = useTranslations("nav");
   const tA11y = useTranslations("accessibility");
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<NavKey | null>(null);
 
   const linkClassName =
     "rounded-md text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
+  function getNavLinkClassName(key: NavKey) {
+    return cn(
+      linkClassName,
+      activeSection === key && "font-medium text-foreground",
+    );
+  }
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.key);
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((element): element is HTMLElement => element !== null);
+
+    if (elements.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        const topEntry = visibleEntries[0];
+        if (topEntry) {
+          setActiveSection(topEntry.target.id as NavKey);
+        }
+      },
+      {
+        rootMargin: "-40% 0px -45% 0px",
+        threshold: [0.1, 0.35, 0.6],
+      },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
@@ -38,12 +94,13 @@ export function Header() {
           {profile.name}
         </a>
 
-        <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label={t("main")}>
+        <nav className="hidden items-center gap-4 lg:flex xl:gap-6" aria-label={t("main")}>
           {navItems.map((item) => (
             <a
               key={item.key}
               href={item.href}
-              className={linkClassName}
+              className={getNavLinkClassName(item.key)}
+              aria-current={activeSection === item.key ? "location" : undefined}
             >
               {t(item.key)}
             </a>
@@ -78,7 +135,8 @@ export function Header() {
             <a
               key={item.key}
               href={item.href}
-              className={cn(linkClassName, "px-3 py-2 hover:bg-muted")}
+              className={cn(getNavLinkClassName(item.key), "px-3 py-2 hover:bg-muted")}
+              aria-current={activeSection === item.key ? "location" : undefined}
               onClick={() => setIsOpen(false)}
             >
               {t(item.key)}

@@ -124,6 +124,7 @@
   html {
     @apply scroll-smooth font-sans overflow-x-hidden;
     background-color: var(--background);
+    scroll-padding-top: 5.5rem;
   }
 
   body {
@@ -179,4 +180,9 @@
 
 .animate-marquee-reverse {
   animation: marquee-reverse linear infinite;
+}
+
+.group:hover .animate-marquee,
+.group:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }

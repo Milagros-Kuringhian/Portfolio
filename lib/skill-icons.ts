@@ -1,4 +1,4 @@
-import { Code2 } from "lucide-react";
+import { Code2, FlaskConical } from "lucide-react";
 import type { IconType } from "react-icons";
 import {
   SiCss,
@@ -24,6 +24,8 @@ const skillIconMap: Record<string, IconType> = {
   "VS Code": VscVscode,
   "Next.js": SiNextdotjs,
   "Tailwind CSS": SiTailwindcss,
+  Testing: FlaskConical,
+  "Framer Motion": Code2,
 };
 
 export function getSkillIcon(skill: string): IconType {

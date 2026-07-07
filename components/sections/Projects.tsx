@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
+import { SectionHeader } from "@/components/layout/SectionHeader";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { ProjectCard } from "@/components/sections/ProjectCard";
 import { projects } from "@/data/projects";
@@ -15,9 +16,7 @@ export async function Projects({ locale }: ProjectsProps) {
   return (
     <SectionReveal id="projects" className="py-12 sm:py-16 md:py-24">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:gap-10 md:px-6">
-        <h2 className="font-heading text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl">
-          {t("title")}
-        </h2>
+        <SectionHeader title={t("title")} subtitle={t("subtitle")} />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (

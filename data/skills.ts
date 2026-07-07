@@ -13,7 +13,7 @@ export const skillCategories: SkillCategory[] = [
       es: "Frontend",
       en: "Frontend",
     },
-    skills: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
   {
     id: "tools",
@@ -21,7 +21,7 @@ export const skillCategories: SkillCategory[] = [
       es: "Herramientas",
       en: "Tools",
     },
-    skills: ["Git", "Figma", "VS Code"],
+    skills: ["Tailwind CSS", "Git", "Figma", "VS Code"],
   },
   {
     id: "learning",
@@ -29,6 +29,6 @@ export const skillCategories: SkillCategory[] = [
       es: "Aprendiendo",
       en: "Learning",
     },
-    skills: ["Next.js", "Tailwind CSS"],
+    skills: ["Framer Motion", "Testing"],
   },
 ];

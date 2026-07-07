@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { LocaleHtml } from "@/components/layout/LocaleHtml";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { profile } from "@/data/profile";
+import type { Locale } from "@/i18n";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
 
@@ -31,10 +33,13 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations({ locale, namespace: "metadata" });
+  const activeLocale = locale as Locale;
+  const title = `${profile.name} | ${profile.title[activeLocale]}`;
+  const description = profile.tagline[activeLocale];
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: `/${locale}`,
@@ -44,10 +49,10 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: t("title"),
-      description: t("description"),
+      title,
+      description,
       url: `/${locale}`,
-      siteName: t("siteName"),
+      siteName: t("siteName", { name: profile.name }),
       locale: locale === "es" ? "es_ES" : "en_US",
       alternateLocale: locale === "es" ? ["en_US"] : ["es_ES"],
       type: "website",
@@ -62,8 +67,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
+      title,
+      description,
       images: [siteConfig.ogImage],
     },
     icons: {

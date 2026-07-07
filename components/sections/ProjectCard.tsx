@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { GitHubIcon } from "@/components/icons/social";
 import { Badge } from "@/components/ui/badge";
@@ -32,6 +33,8 @@ export function ProjectCard({
   viewCodeLabel,
 }: ProjectCardProps) {
   const shouldReduceMotion = useReducedMotion();
+  const tA11y = useTranslations("accessibility");
+  const externalLabel = tA11y("opensInNewTab");
 
   return (
     <motion.div
@@ -83,7 +86,12 @@ export function ProjectCard({
               variant="default"
               size="sm"
               render={
-                <a href={project.liveUrl} target="_blank" rel="noreferrer" />
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${liveDemoLabel} ${externalLabel}`}
+                />
               }
             >
               <ExternalLink data-icon="inline-start" />
@@ -94,7 +102,12 @@ export function ProjectCard({
             variant="outline"
             size="sm"
             render={
-              <a href={project.githubUrl} target="_blank" rel="noreferrer" />
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${viewCodeLabel} ${externalLabel}`}
+              />
             }
           >
             <GitHubIcon className="size-4" data-icon="inline-start" />

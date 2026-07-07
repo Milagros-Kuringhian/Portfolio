@@ -18,7 +18,7 @@ export function SkillsMarquee({
   const items = [...skills, ...skills];
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="group relative overflow-hidden">
       <div
         className={cn(
           "flex w-max gap-4 py-2",

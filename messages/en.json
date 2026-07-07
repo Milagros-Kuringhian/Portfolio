@@ -1,8 +1,6 @@
 {
   "metadata": {
-    "title": "Your Name | Frontend Developer",
-    "description": "Personal portfolio showcasing frontend projects, experience, and education.",
-    "siteName": "Your Name Portfolio",
+    "siteName": "{name} Portfolio",
     "ogImageAlt": "Personal portfolio preview image"
   },
   "nav": {
@@ -24,10 +22,12 @@
     "imageAlt": "Profile photo of {name}"
   },
   "about": {
-    "title": "About me"
+    "title": "About me",
+    "subtitle": "A bit about my journey and what I'm looking for today."
   },
   "projects": {
     "title": "Projects",
+    "subtitle": "A selection of work where I combine design, code, and attention to detail.",
     "liveDemo": "Live demo",
     "viewCode": "View code"
   },
@@ -37,10 +37,12 @@
     "categorySkills": "{category} skills"
   },
   "experience": {
-    "title": "Experience"
+    "title": "Experience",
+    "subtitle": "Roles, projects, and learnings that shaped my path so far."
   },
   "education": {
-    "title": "Education"
+    "title": "Education",
+    "subtitle": "Academic background and courses that support my technical foundation."
   },
   "contact": {
     "title": "Contact",
@@ -63,6 +65,7 @@
     "linkedin": "Visit LinkedIn profile"
   },
   "language": {
+    "groupLabel": "Select language",
     "switchToEs": "Switch to Spanish",
     "switchToEn": "Switch to English"
   },
@@ -72,6 +75,12 @@
   },
   "accessibility": {
     "skipToContent": "Skip to main content",
-    "homeLink": "Go to home"
+    "homeLink": "Go to home",
+    "opensInNewTab": "(opens in a new tab)"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The route you're looking for doesn't exist. Head back home to keep exploring the portfolio.",
+    "backHome": "Back to home"
   }
 }

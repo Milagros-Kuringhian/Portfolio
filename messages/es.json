@@ -1,8 +1,6 @@
 {
   "metadata": {
-    "title": "Tu Nombre | Desarrollador/a Frontend",
-    "description": "Portfolio personal con proyectos, experiencia y formación en desarrollo frontend.",
-    "siteName": "Portfolio de Tu Nombre",
+    "siteName": "Portfolio de {name}",
     "ogImageAlt": "Vista previa del portfolio personal"
   },
   "nav": {
@@ -24,10 +22,12 @@
     "imageAlt": "Foto de perfil de {name}"
   },
   "about": {
-    "title": "Sobre mí"
+    "title": "Sobre mí",
+    "subtitle": "Un poco sobre mi recorrido y lo que busco hoy."
   },
   "projects": {
     "title": "Proyectos",
+    "subtitle": "Selección de trabajos donde combino diseño, código y atención al detalle.",
     "liveDemo": "Demo en vivo",
     "viewCode": "Ver código"
   },
@@ -37,10 +37,12 @@
     "categorySkills": "Habilidades de {category}"
   },
   "experience": {
-    "title": "Experiencia"
+    "title": "Experiencia",
+    "subtitle": "Roles, proyectos y aprendizajes que fueron marcando mi camino."
   },
   "education": {
-    "title": "Educación"
+    "title": "Educación",
+    "subtitle": "Formación académica y cursos que sostienen mi base técnica."
   },
   "contact": {
     "title": "Contacto",
@@ -63,6 +65,7 @@
     "linkedin": "Visitar perfil de LinkedIn"
   },
   "language": {
+    "groupLabel": "Seleccionar idioma",
     "switchToEs": "Cambiar a español",
     "switchToEn": "Cambiar a inglés"
   },
@@ -72,6 +75,12 @@
   },
   "accessibility": {
     "skipToContent": "Saltar al contenido principal",
-    "homeLink": "Ir al inicio"
+    "homeLink": "Ir al inicio",
+    "opensInNewTab": "(se abre en una pestaña nueva)"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La ruta que buscás no existe. Volvé al inicio para seguir explorando el portfolio.",
+    "backHome": "Volver al inicio"
   }
 }

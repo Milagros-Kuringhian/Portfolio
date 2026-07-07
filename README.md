@@ -20,6 +20,14 @@ npm run dev
 
 Abre [http://localhost:3000](http://localhost:3000). El sitio redirige a `/es` por defecto.
 
+### Estado local
+
+El portfolio está **terminado para uso local** (fases 0–4). Incluye todas las secciones, i18n, temas, SEO, accesibilidad, 404, sitemap y robots.
+
+**Pendiente cuando quieras:**
+1. Personalizar contenido en `data/` y `public/cv.pdf`
+2. Deploy en Vercel (fase 5)
+
 ### Scripts disponibles
 
 | Comando | Descripción |

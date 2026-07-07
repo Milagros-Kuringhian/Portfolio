@@ -118,10 +118,10 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 | Mobile | Menú hamburguesa o nav compacto |
 
 **Criterios de aceptación:**
-- [ ] Todos los links de nav llevan a la sección correcta
-- [ ] Toggle de idioma cambia ruta y todo el contenido
-- [ ] Toggle de tema funciona y persiste
-- [ ] Header usable en móvil sin overflow
+- [x] Todos los links de nav llevan a la sección correcta
+- [x] Toggle de idioma cambia ruta y todo el contenido
+- [x] Toggle de tema funciona y persiste
+- [x] Header usable en móvil sin overflow
 
 ---
 
@@ -146,11 +146,11 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 - `image: string` (ruta a foto)
 
 **Criterios de aceptación:**
-- [ ] h1 único en la página
-- [ ] Los 3 CTAs funcionan correctamente
-- [ ] CV se descarga al hacer clic
-- [ ] Textos cambian al switch de idioma
-- [ ] Se ve bien en móvil y desktop
+- [x] h1 único en la página
+- [x] Los 3 CTAs funcionan correctamente
+- [x] CV se descarga al hacer clic
+- [x] Textos cambian al switch de idioma
+- [x] Se ve bien en móvil y desktop
 
 ---
 
@@ -170,9 +170,9 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 - `availability: { es, en }` (ej. "Disponible para proyectos freelance")
 
 **Criterios de aceptación:**
-- [ ] Bio legible y no más de 4 oraciones
-- [ ] Traducción completa al cambiar idioma
-- [ ] Layout de dos columnas en desktop, una en móvil
+- [x] Bio legible y no más de 4 oraciones
+- [x] Traducción completa al cambiar idioma
+- [x] Layout de dos columnas en desktop, una en móvil
 
 ---
 
@@ -201,11 +201,11 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 ```
 
 **Criterios de aceptación:**
-- [ ] Mínimo 3 cards visibles
-- [ ] Cada card tiene imagen, título, descripción y al menos 1 link
-- [ ] Badges de tecnología visibles
-- [ ] Links abren en nueva pestaña (`target="_blank"`)
-- [ ] Grid responsive: 1 col móvil, 2 tablet, 3 desktop
+- [x] Mínimo 3 cards visibles
+- [x] Cada card tiene imagen, título, descripción y al menos 1 link
+- [x] Badges de tecnología visibles
+- [x] Links abren en nueva pestaña (`target="_blank"`)
+- [x] Grid responsive: 1 col móvil, 2 tablet, 3 desktop
 
 ---
 
@@ -229,9 +229,9 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 - Categorías con `label: { es, en }` y array de skills (nombres técnicos sin traducir)
 
 **Criterios de aceptación:**
-- [ ] Mínimo 3 categorías
-- [ ] Títulos de categoría traducidos
-- [ ] Nombres de tecnologías consistentes (ej. "TypeScript", no "Typescript")
+- [x] Mínimo 3 categorías
+- [x] Títulos de categoría traducidos
+- [x] Nombres de tecnologías consistentes (ej. "TypeScript", no "Typescript")
 
 ---
 
@@ -257,9 +257,9 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 ```
 
 **Criterios de aceptación:**
-- [ ] Timeline visual clara con línea o marcadores
-- [ ] Fechas y logros traducidos
-- [ ] Orden cronológico descendente (más reciente primero)
+- [x] Timeline visual clara con línea o marcadores
+- [x] Fechas y logros traducidos
+- [x] Orden cronológico descendente (más reciente primero)
 
 ---
 
@@ -284,9 +284,9 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 ```
 
 **Criterios de aceptación:**
-- [ ] Al menos 1 entrada visible
-- [ ] Título de carrera traducido
-- [ ] Consistente visualmente con sección Experiencia
+- [x] Al menos 1 entrada visible
+- [x] Título de carrera traducido
+- [x] Consistente visualmente con sección Experiencia
 
 ---
 
@@ -307,10 +307,10 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 - `linkedin: string`
 
 **Criterios de aceptación:**
-- [ ] Email copiable al portapapeles con feedback visual
-- [ ] Links a redes abren correctamente
-- [ ] Formulario accesible por teclado
-- [ ] Botón de CV funcional
+- [x] Email copiable al portapapeles con feedback visual
+- [x] Links a redes abren correctamente
+- [x] Formulario accesible por teclado
+- [x] Botón de CV funcional
 
 ---
 
@@ -324,8 +324,8 @@ Presentar habilidades, proyectos y trayectoria de forma clara y memorable para r
 | Links opcionales | Repetir GitHub / LinkedIn |
 
 **Criterios de aceptación:**
-- [ ] Año se actualiza automáticamente
-- [ ] Consistente con tema claro/oscuro
+- [x] Año se actualiza automáticamente
+- [x] Consistente con tema claro/oscuro
 
 ---
 

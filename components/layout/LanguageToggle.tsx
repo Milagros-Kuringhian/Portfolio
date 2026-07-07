@@ -27,7 +27,11 @@ export function LanguageToggle() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-lg border border-border p-1">
+    <div
+      className="flex items-center gap-1 rounded-lg border border-border p-1"
+      role="group"
+      aria-label={t("groupLabel")}
+    >
       {(["es", "en"] as const).map((item) => (
         <Button
           key={item}
