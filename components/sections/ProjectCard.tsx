@@ -8,13 +8,6 @@ import { useTranslations } from "next-intl";
 import { GitHubIcon } from "@/components/icons/social";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import type { Project } from "@/data/projects";
 import type { Locale } from "@/i18n";
 import { cn } from "@/lib/utils";
@@ -24,37 +17,42 @@ interface ProjectCardProps {
   locale: Locale;
   liveDemoLabel: string;
   viewCodeLabel: string;
+  accentIndex?: number;
 }
+
+const tagVariants = ["secondary", "default", "outline"] as const;
 
 export function ProjectCard({
   project,
   locale,
   liveDemoLabel,
   viewCodeLabel,
+  accentIndex = 0,
 }: ProjectCardProps) {
   const shouldReduceMotion = useReducedMotion();
   const tA11y = useTranslations("accessibility");
   const externalLabel = tA11y("opensInNewTab");
+  const primaryTag = project.tech[0];
 
   return (
-    <motion.div
+    <motion.article
       whileHover={
         shouldReduceMotion
           ? undefined
           : {
-              y: -4,
+              y: -6,
               transition: { duration: 0.2 },
             }
       }
       className="h-full"
     >
-      <Card
+      <div
         className={cn(
-          "h-full overflow-hidden transition-[box-shadow,border-color] duration-300",
-          "hover:border-primary/30 hover:shadow-lg",
+          "flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-[0_8px_30px_-12px_rgba(20,43,69,0.12)] transition-[box-shadow,border-color] duration-300",
+          "hover:border-primary/25 hover:shadow-[0_16px_40px_-14px_rgba(20,43,69,0.2)]",
         )}
       >
-        <div className="relative aspect-video overflow-hidden border-b border-border">
+        <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={project.image}
             alt={project.title[locale]}
@@ -63,58 +61,68 @@ export function ProjectCard({
             className={cn(
               "object-cover",
               !shouldReduceMotion &&
-                "transition-transform duration-500 hover:scale-[1.03]",
+                "transition-transform duration-500 hover:scale-[1.04]",
             )}
           />
         </div>
-        <CardHeader>
-          <h3 className="font-heading text-xl">{project.title[locale]}</h3>
-          <CardDescription>{project.description[locale]}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((tech) => (
-              <Badge key={tech} variant="secondary">
-                {tech}
-              </Badge>
-            ))}
+
+        <div className="flex flex-1 flex-col gap-4 p-5">
+          <div className="flex flex-col gap-2">
+            <h3 className="font-heading text-xl font-semibold text-foreground">
+              {project.title[locale]}
+            </h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {project.description[locale]}
+            </p>
           </div>
-        </CardContent>
-        <CardFooter className="flex flex-wrap gap-2">
-          {project.liveUrl ? (
+
+          {primaryTag ? (
+            <Badge
+              variant={tagVariants[accentIndex % tagVariants.length]}
+              className="w-fit rounded-full px-3 py-1 text-[0.7rem] uppercase tracking-wider"
+            >
+              {primaryTag}
+            </Badge>
+          ) : null}
+
+          <div className="mt-auto flex flex-wrap gap-2 pt-2">
+            {project.liveUrl ? (
+              <Button
+                variant="default"
+                size="sm"
+                className="rounded-full"
+                render={
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${liveDemoLabel} ${externalLabel}`}
+                  />
+                }
+              >
+                <ExternalLink data-icon="inline-start" />
+                {liveDemoLabel}
+              </Button>
+            ) : null}
             <Button
-              variant="default"
+              variant="outline"
               size="sm"
+              className="rounded-full border-accent/40"
               render={
                 <a
-                  href={project.liveUrl}
+                  href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${liveDemoLabel} ${externalLabel}`}
+                  aria-label={`${viewCodeLabel} ${externalLabel}`}
                 />
               }
             >
-              <ExternalLink data-icon="inline-start" />
-              {liveDemoLabel}
+              <GitHubIcon className="size-4" data-icon="inline-start" />
+              {viewCodeLabel}
             </Button>
-          ) : null}
-          <Button
-            variant="outline"
-            size="sm"
-            render={
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${viewCodeLabel} ${externalLabel}`}
-              />
-            }
-          >
-            <GitHubIcon className="size-4" data-icon="inline-start" />
-            {viewCodeLabel}
-          </Button>
-        </CardFooter>
-      </Card>
-    </motion.div>
+          </div>
+        </div>
+      </div>
+    </motion.article>
   );
 }

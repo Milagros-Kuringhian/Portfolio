@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
+  { href: "#hero", key: "home" },
   { href: "#about", key: "about" },
   { href: "#projects", key: "projects" },
   { href: "#skills", key: "skills" },
@@ -25,15 +26,15 @@ export function Header() {
   const t = useTranslations("nav");
   const tA11y = useTranslations("accessibility");
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<NavKey | null>(null);
+  const [activeSection, setActiveSection] = useState<NavKey | null>("home");
 
   const linkClassName =
-    "rounded-md text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "relative rounded-md px-1 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   function getNavLinkClassName(key: NavKey) {
     return cn(
       linkClassName,
-      activeSection === key && "font-medium text-foreground",
+      activeSection === key && "font-semibold text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
     );
   }
 
@@ -53,7 +54,9 @@ export function Header() {
   }, [isOpen]);
 
   useEffect(() => {
-    const sectionIds = navItems.map((item) => item.key);
+    const sectionIds = navItems.map((item) =>
+      item.key === "home" ? "hero" : item.key,
+    );
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => element !== null);
@@ -70,7 +73,8 @@ export function Header() {
 
         const topEntry = visibleEntries[0];
         if (topEntry) {
-          setActiveSection(topEntry.target.id as NavKey);
+          const sectionId = topEntry.target.id;
+          setActiveSection(sectionId === "hero" ? "home" : (sectionId as NavKey));
         }
       },
       {
@@ -83,18 +87,25 @@ export function Header() {
     return () => observer.disconnect();
   }, []);
 
+  const logoLetter = profile.name.trim().charAt(0).toUpperCase() || "M";
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
         <a
           href="#hero"
           aria-label={tA11y("homeLink")}
-          className="max-w-[45vw] truncate rounded-md font-heading text-base font-semibold tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:max-w-none sm:text-lg"
+          className="flex min-w-0 items-center gap-3 rounded-md transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          {profile.name}
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-lg font-bold text-primary-foreground">
+            {logoLetter}
+          </span>
+          <span className="truncate font-heading text-base font-semibold tracking-tight text-foreground sm:text-lg">
+            {profile.name}
+          </span>
         </a>
 
-        <nav className="hidden items-center gap-4 lg:flex xl:gap-6" aria-label={t("main")}>
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7" aria-label={t("main")}>
           {navItems.map((item) => (
             <a
               key={item.key}
@@ -135,7 +146,7 @@ export function Header() {
             <a
               key={item.key}
               href={item.href}
-              className={cn(getNavLinkClassName(item.key), "px-3 py-2 hover:bg-muted")}
+              className={cn(getNavLinkClassName(item.key), "px-3 py-2 hover:bg-muted/60")}
               aria-current={activeSection === item.key ? "location" : undefined}
               onClick={() => setIsOpen(false)}
             >

@@ -5,8 +5,16 @@ export type LocalizedString = {
   en: string;
 };
 
+export type ProfileValue = {
+  id: string;
+  label: LocalizedString;
+  description: LocalizedString;
+  tone: "primary" | "secondary" | "accent";
+};
+
 export type Profile = {
   name: string;
+  firstName: string;
   title: LocalizedString;
   tagline: LocalizedString;
   bio: LocalizedString;
@@ -15,10 +23,12 @@ export type Profile = {
   email: string;
   github: string;
   linkedin: string;
+  values: ProfileValue[];
 };
 
 export const profile: Profile = {
   name: "Tu Nombre",
+  firstName: "Tu Nombre",
   title: {
     es: "Desarrollador/a Frontend",
     en: "Frontend Developer",
@@ -39,6 +49,35 @@ export const profile: Profile = {
   email: "placeholder@email.com",
   github: "https://github.com",
   linkedin: "https://linkedin.com",
+  values: [
+    {
+      id: "empathy",
+      label: { es: "Empatía", en: "Empathy" },
+      description: {
+        es: "Diseño pensando en las personas que van a usar cada interfaz.",
+        en: "I design with the people who will use each interface in mind.",
+      },
+      tone: "primary",
+    },
+    {
+      id: "creativity",
+      label: { es: "Creatividad", en: "Creativity" },
+      description: {
+        es: "Busco soluciones visuales claras sin perder funcionalidad.",
+        en: "I look for clear visual solutions without losing functionality.",
+      },
+      tone: "secondary",
+    },
+    {
+      id: "commitment",
+      label: { es: "Compromiso", en: "Commitment" },
+      description: {
+        es: "Me involucro en cada proyecto con responsabilidad y detalle.",
+        en: "I get involved in every project with responsibility and care.",
+      },
+      tone: "accent",
+    },
+  ],
 };
 
 export function getProfileField<T extends keyof Profile>(

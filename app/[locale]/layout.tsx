@@ -3,6 +3,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { PageBlobs } from "@/components/layout/DecorativeShapes";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { LocaleHtml } from "@/components/layout/LocaleHtml";
@@ -94,6 +95,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <LocaleHtml locale={locale} />
+      <PageBlobs />
       <SkipLink />
       <Header />
       <main id="main-content" className="min-w-0 flex-1">

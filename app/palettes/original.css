@@ -1,0 +1,80 @@
+/* Palette: Original — teal, coral & lavender */
+
+:root {
+  --background: #ffffff;
+  --foreground: #2d3436;
+  --card: #ffffff;
+  --card-foreground: #2d3436;
+  --popover: #ffffff;
+  --popover-foreground: #2d3436;
+  --primary: #2ec4b6;
+  --primary-foreground: #ffffff;
+  --secondary: #9b8fd9;
+  --secondary-foreground: #ffffff;
+  --muted: #eef1f6;
+  --muted-foreground: #636e72;
+  --accent: #ff7f6e;
+  --accent-foreground: #ffffff;
+  --destructive: #e74c3c;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2ec4b6;
+  --radius: 1rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2d3436;
+  --sidebar-primary: #2ec4b6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef1f6;
+  --sidebar-accent-foreground: #2d3436;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #2ec4b6;
+  --chart-1: #2ec4b6;
+  --chart-2: #9b8fd9;
+  --chart-3: #ff7f6e;
+  --chart-4: #2d3436;
+  --chart-5: #636e72;
+  --section: color-mix(in srgb, var(--muted) 20%, var(--background));
+  --section-footer: color-mix(in srgb, var(--muted) 30%, var(--background));
+  --shadow-primary: 46, 196, 182;
+  --shadow-secondary: 155, 143, 217;
+  --shadow-accent: 255, 127, 110;
+}
+
+.dark {
+  --background: #1a1d23;
+  --foreground: #f0f2f5;
+  --card: #242830;
+  --card-foreground: #f0f2f5;
+  --popover: #242830;
+  --popover-foreground: #f0f2f5;
+  --primary: #3dd9ca;
+  --primary-foreground: #1a1d23;
+  --secondary: #b0a3e0;
+  --secondary-foreground: #1a1d23;
+  --muted: #2a2f38;
+  --muted-foreground: #a0a8b4;
+  --accent: #ff9585;
+  --accent-foreground: #1a1d23;
+  --destructive: #ff6b6b;
+  --border: #3a4150;
+  --input: #3a4150;
+  --ring: #3dd9ca;
+  --sidebar: #1a1d23;
+  --sidebar-foreground: #f0f2f5;
+  --sidebar-primary: #3dd9ca;
+  --sidebar-primary-foreground: #1a1d23;
+  --sidebar-accent: #2a2f38;
+  --sidebar-accent-foreground: #f0f2f5;
+  --sidebar-border: #3a4150;
+  --sidebar-ring: #3dd9ca;
+  --chart-1: #3dd9ca;
+  --chart-2: #b0a3e0;
+  --chart-3: #ff9585;
+  --chart-4: #f0f2f5;
+  --chart-5: #a0a8b4;
+  --section: color-mix(in srgb, var(--muted) 20%, var(--background));
+  --section-footer: color-mix(in srgb, var(--muted) 30%, var(--background));
+  --shadow-primary: 46, 196, 182;
+  --shadow-secondary: 155, 143, 217;
+  --shadow-accent: 255, 127, 110;
+}

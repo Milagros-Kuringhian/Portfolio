@@ -8,7 +8,7 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-muted/30">
+    <footer className="border-t border-border bg-section-footer">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-center text-sm text-muted-foreground sm:text-left md:flex-row md:px-6">
         <p className="min-w-0">
           © {year} {profile.name}. {t("rights")}

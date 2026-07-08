@@ -8,11 +8,22 @@ import { cn } from "@/lib/utils";
 interface SkillsMarqueeProps {
   skills: string[];
   direction?: "left" | "right";
+  accent?: "primary" | "secondary" | "accent";
 }
+
+const accentIconClass: Record<
+  NonNullable<SkillsMarqueeProps["accent"]>,
+  string
+> = {
+  primary: "text-primary",
+  secondary: "text-secondary",
+  accent: "text-accent",
+};
 
 export function SkillsMarquee({
   skills,
   direction = "left",
+  accent = "primary",
 }: SkillsMarqueeProps) {
   const shouldReduceMotion = useReducedMotion();
   const items = [...skills, ...skills];
@@ -40,9 +51,9 @@ export function SkillsMarquee({
             <div
               key={`${skill}-${index}`}
               aria-hidden={isDuplicate || undefined}
-              className="flex shrink-0 items-center gap-3 rounded-full border border-border bg-card px-5 py-2.5 shadow-sm"
+              className="flex shrink-0 items-center gap-3 rounded-full border border-border/40 bg-card px-5 py-3 shadow-[0_6px_24px_-8px_rgba(20,43,69,0.15)]"
             >
-              <Icon className="size-5 text-primary" aria-hidden />
+              <Icon className={cn("size-5", accentIconClass[accent])} aria-hidden />
               <span className="text-sm font-medium text-foreground">{skill}</span>
             </div>
           );

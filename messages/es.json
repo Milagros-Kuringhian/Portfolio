@@ -4,6 +4,7 @@
     "ogImageAlt": "Vista previa del portfolio personal"
   },
   "nav": {
+    "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
     "skills": "Habilidades",
@@ -16,18 +17,21 @@
     "mobile": "Navegación móvil"
   },
   "hero": {
-    "viewProjects": "Ver proyectos",
+    "greeting": "Hola, soy",
+    "viewProjects": "Ver mis proyectos",
     "downloadCv": "Descargar CV",
-    "contact": "Contactar",
+    "contact": "Hablemos",
     "imageAlt": "Foto de perfil de {name}"
   },
   "about": {
     "title": "Sobre mí",
-    "subtitle": "Un poco sobre mi recorrido y lo que busco hoy."
+    "subtitle": "Un poco sobre mi recorrido y lo que me define como profesional.",
+    "learnMore": "Conocé más sobre mí"
   },
   "projects": {
     "title": "Proyectos",
     "subtitle": "Selección de trabajos donde combino diseño, código y atención al detalle.",
+    "viewAll": "Ver todos los proyectos",
     "liveDemo": "Demo en vivo",
     "viewCode": "Ver código"
   },
@@ -54,10 +58,12 @@
     "formName": "Nombre",
     "formEmail": "Email",
     "formMessage": "Mensaje",
-    "formSubmit": "Enviar mensaje",
+    "formSubmit": "Hablemos",
     "downloadCv": "Descargar CV",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "location": "Ubicación",
+    "locationValue": "Remoto / Argentina"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
