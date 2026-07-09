@@ -14,8 +14,8 @@ Portfolio de una sola página para desarrollador/a frontend. Incluye secciones d
 ## Instalación y desarrollo
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000). El sitio redirige a `/es` por defecto.
@@ -32,10 +32,10 @@ El portfolio está **terminado para uso local** (fases 0–4). Incluye todas las
 
 | Comando | Descripción |
 |---|---|
-| `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Build de producción |
-| `npm run start` | Servir build de producción |
-| `npm run lint` | ESLint |
+| `pnpm dev` | Servidor de desarrollo |
+| `pnpm build` | Build de producción |
+| `pnpm start` | Servir build de producción |
+| `pnpm lint` | ESLint |
 
 ## Editar contenido
 
@@ -139,7 +139,7 @@ git push -u origin main
 ### Opción B — Vercel CLI
 
 ```bash
-npm i -g vercel
+pnpm add -g vercel
 vercel login
 vercel link
 vercel --prod

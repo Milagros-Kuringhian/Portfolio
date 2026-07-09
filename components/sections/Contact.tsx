@@ -26,28 +26,32 @@ export function Contact() {
   }
 
   return (
-    <SectionReveal id="contact" className="py-12 sm:py-16 md:py-24">
+    <SectionReveal id="contact" className="section-padding-tight-top">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[color-mix(in_oklch,var(--primary),transparent_86%)] p-6 sm:p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-3xl bg-[color-mix(in_oklch,var(--primary),transparent_88%)] px-6 py-7 sm:px-9 sm:py-9 md:px-11 md:py-10">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-10 -top-10 size-44 rounded-full bg-secondary/20 blur-2xl"
+            className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-[var(--soft-sky)]/30 blur-2xl"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-12 -left-12 size-48 rounded-full bg-secondary/20 blur-2xl"
           />
 
-          <div className="relative grid gap-10 md:grid-cols-[1fr_1.1fr_auto] md:items-center md:gap-8">
-            <div className="flex min-w-0 flex-col gap-5">
+          <div className="relative grid gap-6 md:grid-cols-[1fr_1.1fr_auto] md:items-center md:gap-8">
+            <div className="flex min-w-0 flex-col gap-4">
               <div className="flex flex-col gap-3">
                 <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
                   {t("title")}
                 </h2>
-                <span className="h-1 w-12 rounded-full bg-primary" aria-hidden />
-                <p className="text-base text-muted-foreground sm:text-lg">
+                <span className="h-0.5 w-10 rounded-full bg-primary" aria-hidden />
+                <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
                   {t("subtitle")}
                 </p>
               </div>
 
               <Button
-                className="h-11 w-full rounded-full px-6 sm:w-auto"
+                className="h-12 w-full rounded-full px-7 shadow-[0_4px_20px_-4px_rgba(var(--shadow-primary),0.3)] sm:w-auto"
                 render={<a href={`mailto:${profile.email}`} />}
               >
                 <Mail data-icon="inline-start" />
@@ -57,14 +61,12 @@ export function Contact() {
 
             <div className="flex min-w-0 flex-col gap-5">
               <div className="flex items-start gap-3">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                  <Mail className="size-4" aria-hidden />
-                </div>
+                <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {t("email")}
                   </p>
-                  <div className="flex flex-wrap items-center gap-2">
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
                     <a
                       href={`mailto:${profile.email}`}
                       className="break-all text-sm font-medium text-foreground underline-offset-4 hover:text-primary hover:underline"
@@ -87,24 +89,22 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                  <MapPin className="size-4" aria-hidden />
-                </div>
+                <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {t("location")}
                   </p>
-                  <p className="text-sm font-medium text-foreground">
+                  <p className="mt-1 text-sm font-medium text-foreground">
                     {t("locationValue")}
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 pt-1">
                 <Button
                   variant="outline"
                   size="sm"
-                  className="rounded-full border-primary/30 bg-background/80"
+                  className="rounded-full border-border/60 bg-background/60"
                   render={
                     <a
                       href={profile.github}
@@ -120,7 +120,7 @@ export function Contact() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="rounded-full border-primary/30 bg-background/80"
+                  className="rounded-full border-border/60 bg-background/60"
                   render={
                     <a
                       href={profile.linkedin}

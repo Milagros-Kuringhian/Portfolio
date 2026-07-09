@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
+import { ExperienceDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { experiences } from "@/data/experience";
@@ -11,8 +12,8 @@ interface ExperienceProps {
 }
 
 const timelineDotColors = [
-  "bg-secondary",
   "bg-primary",
+  "bg-secondary",
   "bg-accent",
 ] as const;
 
@@ -20,30 +21,35 @@ export async function Experience({ locale }: ExperienceProps) {
   const t = await getTranslations("experience");
 
   return (
-    <SectionReveal id="experience" className="py-12 sm:py-16 md:py-24">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:px-6">
+    <SectionReveal
+      id="experience"
+      className="relative section-padding overflow-hidden bg-section-alt"
+    >
+      <ExperienceDecorations />
+
+      <div className="section-inner relative z-10">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
-        <div className="relative flex flex-col gap-10 border-l-2 border-primary/25 pl-6 sm:pl-8">
+        <div className="relative ml-2 flex flex-col gap-6 border-l border-primary/20 pl-7 sm:ml-0 sm:pl-9 md:gap-7">
           {experiences.map((item, index) => (
             <article key={item.id} className="relative min-w-0">
               <span
                 className={cn(
-                  "absolute top-3 -left-[calc(1.5rem+1px)] size-4 rounded-full ring-4 ring-background sm:-left-[2.06rem]",
+                  "absolute top-1 -left-[calc(1.75rem+0.5px)] size-3 rounded-full ring-[3px] ring-section-alt sm:-left-[2.375rem]",
                   timelineDotColors[index % timelineDotColors.length],
                 )}
               />
-              <div className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-card p-5 shadow-[0_8px_30px_-12px_rgba(145,175,196,0.25)]">
-                <p className="text-sm font-semibold text-primary">
+              <div className="flex flex-col gap-1.5">
+                <p className="text-sm font-medium text-primary">
                   {item.period[locale]}
                 </p>
-                <h3 className="font-heading text-xl font-semibold text-foreground">
+                <h3 className="font-heading text-lg font-semibold text-foreground sm:text-xl">
                   {item.role[locale]}
                 </h3>
-                <p className="text-sm font-medium text-secondary">
+                <p className="text-sm font-medium text-muted-foreground">
                   {item.company}
                 </p>
-                <ul className="mt-1 flex list-none flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
+                <ul className="mt-1 flex list-none flex-col gap-1 text-sm leading-relaxed text-muted-foreground">
                   {item.highlights[locale].map((highlight) => (
                     <li key={highlight}>{highlight}</li>
                   ))}

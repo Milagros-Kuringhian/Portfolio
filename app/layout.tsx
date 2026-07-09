@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { siteConfig } from "@/lib/site";
@@ -11,7 +11,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const fraunces = Fraunces({
+const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-display",
   subsets: ["latin"],
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${dmSans.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-hidden bg-background">
         <ThemeProvider>{children}</ThemeProvider>

@@ -40,7 +40,7 @@ export function ProjectCard({
         shouldReduceMotion
           ? undefined
           : {
-              y: -6,
+              y: -4,
               transition: { duration: 0.2 },
             }
       }
@@ -48,11 +48,11 @@ export function ProjectCard({
     >
       <div
         className={cn(
-          "flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-[0_8px_30px_-12px_rgba(20,43,69,0.12)] transition-[box-shadow,border-color] duration-300",
-          "hover:border-primary/25 hover:shadow-[0_16px_40px_-14px_rgba(20,43,69,0.2)]",
+          "flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-[0_4px_24px_-8px_rgba(var(--shadow-primary),0.1)] transition-[box-shadow,transform] duration-300",
+          "hover:shadow-[0_12px_32px_-10px_rgba(var(--shadow-primary),0.15)]",
         )}
       >
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={project.image}
             alt={project.title[locale]}
@@ -61,14 +61,14 @@ export function ProjectCard({
             className={cn(
               "object-cover",
               !shouldReduceMotion &&
-                "transition-transform duration-500 hover:scale-[1.04]",
+                "transition-transform duration-500 hover:scale-[1.03]",
             )}
           />
         </div>
 
-        <div className="flex flex-1 flex-col gap-4 p-5">
-          <div className="flex flex-col gap-2">
-            <h3 className="font-heading text-xl font-semibold text-foreground">
+        <div className="flex flex-1 flex-col gap-2.5 p-4 sm:p-5">
+          <div className="flex flex-col gap-1.5">
+            <h3 className="font-heading text-lg font-semibold text-foreground sm:text-xl">
               {project.title[locale]}
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -79,7 +79,7 @@ export function ProjectCard({
           {primaryTag ? (
             <Badge
               variant={tagVariants[accentIndex % tagVariants.length]}
-              className="w-fit rounded-full px-3 py-1 text-[0.7rem] uppercase tracking-wider"
+              className="w-fit rounded-full px-3 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider"
             >
               {primaryTag}
             </Badge>
@@ -107,7 +107,7 @@ export function ProjectCard({
             <Button
               variant="outline"
               size="sm"
-              className="rounded-full border-accent/40"
+              className="rounded-full border-border/80"
               render={
                 <a
                   href={project.githubUrl}

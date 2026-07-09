@@ -3,7 +3,7 @@
 @import "shadcn/tailwind.css";
 
 /* Cambiar paleta: comenta una línea y descomenta la otra */
-@import "./palettes/warm.css";
+@import "./palettes/warm.css"; /* Minimal — teal, coral & lavender */
 /* @import "./palettes/original.css"; */
 
 @custom-variant dark (&:is(.dark *));
@@ -44,6 +44,7 @@
   --color-card: var(--card);
   --color-section-footer: var(--section-footer);
   --color-section: var(--section);
+  --color-section-alt: var(--section-alt);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -61,7 +62,7 @@
   html {
     @apply scroll-smooth font-sans overflow-x-hidden;
     background-color: var(--background);
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 4.5rem;
   }
 
   body {
@@ -78,8 +79,32 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display), serif;
+    font-family: var(--font-display), var(--font-sans), sans-serif;
   }
+}
+
+@utility section-padding {
+  @apply py-10 sm:py-12 md:py-16;
+}
+
+@utility section-padding-hero {
+  @apply pt-8 pb-5 sm:pt-10 sm:pb-6 md:pt-12 md:pb-7;
+}
+
+@utility section-padding-about {
+  @apply py-12 sm:py-14 md:py-[5.5rem];
+}
+
+@utility section-padding-tight-top {
+  @apply pt-6 pb-10 sm:pt-8 sm:pb-12 md:pt-10 md:pb-14;
+}
+
+@utility section-inner {
+  @apply mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 md:px-6 lg:gap-7;
+}
+
+@utility soft-shadow {
+  box-shadow: 0 4px 24px -6px rgba(var(--shadow-primary), 0.08);
 }
 
 @media (prefers-reduced-motion: reduce) {

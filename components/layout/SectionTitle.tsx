@@ -16,19 +16,19 @@ export function SectionTitle({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between",
+        "flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between",
         className,
       )}
     >
-      <div className="flex max-w-2xl flex-col gap-3">
+      <div className="flex max-w-2xl flex-col gap-2">
         <div className="flex flex-col gap-2">
-          <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             {title}
           </h2>
-          <span className="h-1 w-12 rounded-full bg-primary" aria-hidden />
+          <span className="h-0.5 w-10 rounded-full bg-primary" aria-hidden />
         </div>
         {subtitle ? (
-          <p className="text-base text-muted-foreground sm:text-lg">
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
             {subtitle}
           </p>
         ) : null}

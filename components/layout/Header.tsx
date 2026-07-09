@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-import { profile } from "@/data/profile";
 import { Button } from "@/components/ui/button";
+import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -29,12 +29,13 @@ export function Header() {
   const [activeSection, setActiveSection] = useState<NavKey | null>("home");
 
   const linkClassName =
-    "relative rounded-md px-1 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "relative rounded-md px-1 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   function getNavLinkClassName(key: NavKey) {
     return cn(
       linkClassName,
-      activeSection === key && "font-semibold text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
+      activeSection === key &&
+        "text-primary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
     );
   }
 
@@ -87,25 +88,21 @@ export function Header() {
     return () => observer.disconnect();
   }, []);
 
-  const logoLetter = profile.name.trim().charAt(0).toUpperCase() || "M";
-
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
+    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/85 backdrop-blur-lg">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <a
           href="#hero"
+          className="shrink-0 font-heading text-base font-semibold tracking-tight text-foreground transition-colors hover:text-primary md:text-lg"
           aria-label={tA11y("homeLink")}
-          className="flex min-w-0 items-center gap-3 rounded-md transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-lg font-bold text-primary-foreground">
-            {logoLetter}
-          </span>
-          <span className="truncate font-heading text-base font-semibold tracking-tight text-foreground sm:text-lg">
-            {profile.name}
-          </span>
+          {profile.firstName}
         </a>
 
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-7" aria-label={t("main")}>
+        <nav
+          className="hidden flex-1 items-center justify-end gap-5 pr-2 lg:flex xl:gap-7"
+          aria-label={t("main")}
+        >
           {navItems.map((item) => (
             <a
               key={item.key}
@@ -118,7 +115,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <LanguageToggle />
           <ThemeToggle />
           <Button
@@ -136,7 +133,7 @@ export function Header() {
 
       <nav
         className={cn(
-          "border-t border-border/70 lg:hidden",
+          "border-t border-border/40 lg:hidden",
           isOpen ? "block" : "hidden",
         )}
         aria-label={t("mobile")}
@@ -146,7 +143,7 @@ export function Header() {
             <a
               key={item.key}
               href={item.href}
-              className={cn(getNavLinkClassName(item.key), "px-3 py-2 hover:bg-muted/60")}
+              className={cn(getNavLinkClassName(item.key), "px-3 py-2.5 hover:bg-muted/50")}
               aria-current={activeSection === item.key ? "location" : undefined}
               onClick={() => setIsOpen(false)}
             >

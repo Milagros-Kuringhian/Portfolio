@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
+import { ProjectsDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { ProjectCard } from "@/components/sections/ProjectCard";
@@ -15,8 +16,13 @@ export async function Projects({ locale }: ProjectsProps) {
   const t = await getTranslations("projects");
 
   return (
-    <SectionReveal id="projects" className="bg-section py-12 sm:py-16 md:py-24">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:px-6">
+    <SectionReveal
+      id="projects"
+      className="relative section-padding overflow-hidden bg-section-alt"
+    >
+      <ProjectsDecorations />
+
+      <div className="section-inner relative z-10">
         <SectionTitle
           title={t("title")}
           subtitle={t("subtitle")}
