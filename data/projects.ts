@@ -12,6 +12,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "app-peliculas",
+    title: {
+      es: "App Películas",
+      en: "Movies App",
+    },
+    description: {
+      es: "Aplicación para explorar películas, construida con Vue y Vite.",
+      en: "Application to browse movies, built with Vue and Vite.",
+    },
+    image: "/images/app-peliculas.png",
+    tech: ["Vue", "JavaScript", "CSS", "Vite"],
+    githubUrl: "https://github.com/Milagros-Kuringhian/App-Peliculas",
+  },
+  {
     id: "weather-app",
     title: {
       es: "App del Clima",

@@ -27,10 +27,10 @@ export type Profile = {
 };
 
 export const profile: Profile = {
-  name: "Tu Nombre",
-  firstName: "Tu Nombre",
+  name: "Portfolio",
+  firstName: "Milagros",
   title: {
-    es: "Desarrollador/a Frontend",
+    es: "Desarrolladora Frontend",
     en: "Frontend Developer",
   },
   tagline: {
@@ -45,8 +45,8 @@ export const profile: Profile = {
     es: "Disponible para proyectos freelance y oportunidades de empleo remoto.",
     en: "Available for freelance projects and remote job opportunities.",
   },
-  image: "/images/profile.svg",
-  email: "placeholder@email.com",
+  image: "/images/avatar-removebg.png",
+  email: "milikuri2003@gmail.com",
   github: "https://github.com",
   linkedin: "https://linkedin.com",
   values: [
