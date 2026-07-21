@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-import { ExperienceDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { experiences } from "@/data/experience";
@@ -21,13 +20,8 @@ export async function Experience({ locale }: ExperienceProps) {
   const t = await getTranslations("experience");
 
   return (
-    <SectionReveal
-      id="experience"
-      className="relative section-padding overflow-hidden bg-section-alt"
-    >
-      <ExperienceDecorations />
-
-      <div className="section-inner relative z-10">
+    <SectionReveal id="experience" className="section-padding bg-section-alt">
+      <div className="section-inner">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
         <div className="relative ml-2 flex flex-col gap-6 border-l border-primary/20 pl-7 sm:ml-0 sm:pl-9 md:gap-7">

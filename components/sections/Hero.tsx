@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { CoralWave, HeroDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/profile";
@@ -12,89 +11,138 @@ interface HeroProps {
   locale: Locale;
 }
 
+function DotGrid({
+  className,
+  rows = 4,
+  cols = 4,
+}: {
+  className?: string;
+  rows?: number;
+  cols?: number;
+}) {
+  return (
+    <svg
+      aria-hidden
+      viewBox={`0 0 ${cols * 10} ${rows * 10}`}
+      className={className}
+    >
+      {Array.from({ length: rows * cols }).map((_, index) => {
+        const row = Math.floor(index / cols);
+        const col = index % cols;
+
+        return (
+          <circle
+            key={index}
+            cx={col * 10 + 5}
+            cy={row * 10 + 5}
+            r="1.6"
+            fill="currentColor"
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
+function HeroAvatarDecor() {
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      {/* Coral circle — peeks above the top-right rim */}
+      <div className="absolute -right-[6%] -top-[4%] size-[28%] rounded-full bg-accent sm:-right-[8%] sm:-top-[6%] sm:size-[26%]" />
+
+      {/* Teal dots — top left */}
+      <DotGrid className="absolute -left-[2%] top-[2%] size-[20%] text-primary sm:-left-[4%] sm:size-[18%]" />
+
+      {/* Teal wave — bottom left, outside the circle rim */}
+      <svg
+        className="absolute -left-[8%] bottom-[6%] w-[48%] text-primary sm:-left-[10%] sm:bottom-[4%] sm:w-[44%]"
+        viewBox="0 0 120 28"
+        fill="none"
+      >
+        <path
+          d="M2 16C14 8 26 22 40 14C54 6 66 20 80 12C94 4 106 16 118 10"
+          stroke="currentColor"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      {/* Teal dots — bottom right */}
+      <DotGrid className="absolute -bottom-[2%] -right-[2%] size-[16%] text-primary sm:-right-[4%] sm:size-[14%]" />
+    </div>
+  );
+}
+
 export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations("hero");
 
   return (
     <SectionReveal
       id="hero"
-      className="section-padding-hero relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 overflow-hidden px-4 sm:gap-12 md:max-h-[720px] md:min-h-[580px] md:flex-row md:items-center md:justify-between md:gap-8 md:px-6 lg:gap-10"
+      className="section-padding-hero relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 overflow-visible px-4 sm:gap-12 md:max-h-[720px] md:min-h-[560px] md:flex-row md:items-center md:justify-between md:gap-8 md:px-6 lg:gap-12"
     >
-      <HeroDecorations />
-
-      <div className="relative z-10 flex w-full min-w-0 flex-[1_1_45%] flex-col gap-5 md:max-w-[45%] md:gap-6">
-        <div className="flex flex-col gap-3 md:gap-4">
-          <h1 className="font-heading leading-[1.05] tracking-tight">
-            <span className="block text-3xl font-bold text-foreground sm:text-4xl md:text-[2.75rem] lg:text-5xl">
-              {t("greeting")}
-            </span>
-            <span className="mt-1 block text-4xl font-bold text-primary sm:text-5xl md:text-[3.25rem] lg:text-[3.75rem]">
-              {profile.firstName}
-              <span className="text-accent">.</span>
-            </span>
-          </h1>
+      <div className="relative z-10 flex w-full min-w-0 flex-[1_1_52%] flex-col gap-6 md:max-w-[52%] md:gap-7">
+        <div className="flex flex-col gap-4 md:gap-5">
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-secondary sm:text-xs">
             {profile.title[locale]}
           </p>
+
+          <h1 className="font-heading text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-[2.65rem] lg:text-[2.85rem]">
+            {t.rich("headline", {
+              highlight: (chunks) => (
+                <span className="text-primary">{chunks}</span>
+              ),
+              accent: (chunks) => (
+                <span className="text-primary">{chunks}</span>
+              ),
+            })}
+          </h1>
+
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base md:max-w-lg">
-            {profile.tagline[locale]}
+            {t("description")}
           </p>
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button
-            className="h-11 w-full rounded-full px-7 text-sm shadow-[0_4px_18px_-6px_rgba(var(--shadow-primary),0.35)] sm:w-auto"
+            className="h-11 w-full rounded-md px-7 text-sm shadow-[0_4px_18px_-6px_rgba(var(--shadow-primary),0.35)] has-data-[icon=inline-end]:pr-7 sm:w-auto"
             render={<a href="#projects" />}
           >
             {t("viewProjects")}
             <ArrowRight data-icon="inline-end" />
           </Button>
           <Button
-            className="h-11 w-full rounded-full border-accent bg-background px-7 text-sm text-accent shadow-[0_2px_12px_-4px_rgba(var(--shadow-accent),0.2)] hover:bg-accent/5 sm:w-auto"
+            className="h-11 w-full rounded-md border-foreground/80 bg-background px-7 text-sm text-foreground hover:bg-muted has-data-[icon=inline-start]:pl-7 sm:w-auto"
             variant="outline"
-            render={<a href="#contact" />}
+            render={<a href="/cv.pdf" download="CV-Milagros.pdf" />}
           >
-            <Mail data-icon="inline-start" />
-            {t("contact")}
+            <Download data-icon="inline-start" />
+            {t("downloadCv")}
           </Button>
         </div>
+
+        <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
+          <span
+            aria-hidden
+            className="size-2 shrink-0 rounded-full bg-primary"
+          />
+          {profile.availability[locale]}
+        </p>
       </div>
 
-      <div className="relative z-10 flex w-full flex-[1_1_55%] items-center justify-center md:max-w-[55%] md:justify-end">
-        <div className="relative size-52 sm:size-60 md:size-64 lg:size-72">
-          <div
-            aria-hidden
-            className="absolute -inset-10 rounded-[48%_52%_50%_50%] bg-secondary/45 max-sm:-inset-6"
-          />
-          <div
-            aria-hidden
-            className="absolute -right-5 top-6 size-14 rounded-full bg-accent/85 sm:size-16"
-          />
-          <div
-            aria-hidden
-            className="absolute -left-3 bottom-14 size-0 border-x-[12px] border-b-[20px] border-x-transparent border-b-primary/75 max-sm:bottom-10"
-          />
-          <div
-            aria-hidden
-            className="absolute -bottom-1 left-1/2 h-14 w-36 -translate-x-1/2 rounded-t-full bg-[var(--soft-sky)]/55 sm:h-16 sm:w-40"
-          />
-          <CoralWave className="absolute -bottom-7 -left-6 w-24 opacity-90 sm:w-28 max-sm:hidden" />
-          <div
-            aria-hidden
-            className="absolute -top-2 right-6 size-3 rounded-full bg-primary/50"
-          />
-          <div
-            aria-hidden
-            className="absolute bottom-20 -right-2 size-2 rounded-full bg-accent/70 max-sm:hidden"
-          />
-          <Image
-            src={profile.image}
-            alt={t("imageAlt", { name: profile.name })}
-            width={288}
-            height={288}
-            priority
-            className="relative size-full rounded-[44%_56%_48%_52%] object-cover shadow-[0_18px_44px_-18px_rgba(var(--shadow-primary),0.28)]"
-          />
+      <div className="relative z-10 flex w-full flex-[1_1_48%] items-center justify-center md:max-w-[48%] md:justify-end">
+        <div className="relative flex size-56 items-center justify-center sm:size-64 md:size-72 lg:size-80">
+          <HeroAvatarDecor />
+          <div className="relative z-10 size-full overflow-hidden rounded-full">
+            <Image
+              src={profile.image}
+              alt={t("imageAlt", { name: profile.name })}
+              width={320}
+              height={320}
+              priority
+              className="size-full object-cover object-top"
+            />
+          </div>
         </div>
       </div>
     </SectionReveal>

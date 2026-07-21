@@ -17,16 +17,16 @@
     "mobile": "Mobile navigation"
   },
   "hero": {
-    "greeting": "Hi, I'm",
+    "headline": "I create <highlight>modern</highlight>, <highlight>functional</highlight> web experiences crafted with care<accent>.</accent>",
+    "description": "I'm Milagros, a frontend developer passionate about turning ideas into clear, accessible interfaces designed for people.",
     "viewProjects": "View my projects",
     "downloadCv": "Download CV",
-    "contact": "Let's talk",
     "imageAlt": "Profile photo of {name}"
   },
   "about": {
     "title": "About me",
     "subtitle": "A bit about my journey and what defines me as a professional.",
-    "learnMore": "Learn more about me"
+    "learnMore": "Explore my journey"
   },
   "projects": {
     "title": "Projects",

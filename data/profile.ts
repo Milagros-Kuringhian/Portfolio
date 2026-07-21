@@ -28,7 +28,7 @@ export type Profile = {
 
 export const profile: Profile = {
   name: "Portfolio",
-  firstName: "Milagros",
+  firstName: "Milagros Kuringhian",
   title: {
     es: "Desarrolladora Frontend",
     en: "Frontend Developer",
@@ -38,14 +38,14 @@ export const profile: Profile = {
     en: "I build warm, accessible web experiences with attention to detail.",
   },
   bio: {
-    es: "Soy desarrollador/a frontend apasionado/a por crear interfaces claras y agradables. Me gusta transformar ideas en productos digitales que se sientan humanos. Busco seguir creciendo en equipos que valoren el diseño, la calidad y el aprendizaje continuo.",
+    es: "Soy desarrolladora frontend apasionadoa por crear interfaces claras y agradables. Me gusta transformar ideas en productos digitales que se sientan humanos. Busco seguir creciendo en equipos que valoren el diseño, la calidad y el aprendizaje continuo.",
     en: "I'm a frontend developer passionate about building clear and delightful interfaces. I enjoy turning ideas into digital products that feel human. I'm looking to keep growing in teams that value design, quality, and continuous learning.",
   },
   availability: {
-    es: "Disponible para proyectos freelance y oportunidades de empleo remoto.",
-    en: "Available for freelance projects and remote job opportunities.",
+    es: "Disponible para oportunidades junior y proyectos freelance.",
+    en: "Available for junior opportunities and freelance projects.",
   },
-  image: "/images/avatar-removebg.png",
+  image: "/images/avatar-lilac.png",
   email: "milikuri2003@gmail.com",
   github: "https://github.com",
   linkedin: "https://linkedin.com",

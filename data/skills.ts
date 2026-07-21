@@ -21,14 +21,6 @@ export const skillCategories: SkillCategory[] = [
       es: "Herramientas",
       en: "Tools",
     },
-    skills: ["Tailwind CSS", "Git", "Figma", "VS Code"],
-  },
-  {
-    id: "learning",
-    label: {
-      es: "Aprendiendo",
-      en: "Learning",
-    },
-    skills: ["Framer Motion", "Testing"],
+    skills: ["Tailwind CSS", "Git", "Figma", "VS Code", "WordPress", "Elementor"],
   },
 ];

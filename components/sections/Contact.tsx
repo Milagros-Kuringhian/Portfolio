@@ -4,7 +4,6 @@ import { Mail, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-import { ContactPlant } from "@/components/layout/DecorativeShapes";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/social";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { Button } from "@/components/ui/button";
@@ -28,17 +27,8 @@ export function Contact() {
   return (
     <SectionReveal id="contact" className="section-padding-tight-top">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-[color-mix(in_oklch,var(--primary),transparent_88%)] px-6 py-7 sm:px-9 sm:py-9 md:px-11 md:py-10">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-[var(--soft-sky)]/30 blur-2xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-12 -left-12 size-48 rounded-full bg-secondary/20 blur-2xl"
-          />
-
-          <div className="relative grid gap-6 md:grid-cols-[1fr_1.1fr_auto] md:items-center md:gap-8">
+        <div className="rounded-3xl bg-[color-mix(in_oklch,var(--primary),transparent_88%)] px-6 py-7 sm:px-9 sm:py-9 md:px-11 md:py-10">
+          <div className="grid gap-6 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-8">
             <div className="flex min-w-0 flex-col gap-4">
               <div className="flex flex-col gap-3">
                 <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
@@ -134,10 +124,6 @@ export function Contact() {
                   {t("linkedin")}
                 </Button>
               </div>
-            </div>
-
-            <div className="hidden justify-center md:flex">
-              <ContactPlant />
             </div>
           </div>
         </div>

@@ -17,16 +17,16 @@
     "mobile": "Navegación móvil"
   },
   "hero": {
-    "greeting": "Hola, soy",
+    "headline": "Creo experiencias web <highlight>modernas</highlight>, <highlight>funcionales</highlight> y cuidadas al detalle<accent>.</accent>",
+    "description": "Soy Milagros, desarrolladora frontend apasionada por convertir ideas en interfaces claras, accesibles y pensadas para las personas.",
     "viewProjects": "Ver mis proyectos",
     "downloadCv": "Descargar CV",
-    "contact": "Hablemos",
     "imageAlt": "Foto de perfil de {name}"
   },
   "about": {
     "title": "Sobre mí",
     "subtitle": "Un poco sobre mi recorrido y lo que me define como profesional.",
-    "learnMore": "Conocé más sobre mí"
+    "learnMore": "Conocer mi recorrido"
   },
   "projects": {
     "title": "Proyectos",

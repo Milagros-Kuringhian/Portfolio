@@ -1,7 +1,6 @@
 import { ArrowRight, Heart, Rocket, Sparkles, Sprout } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { AboutDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { profile } from "@/data/profile";
 import type { Locale } from "@/i18n";
@@ -27,13 +26,8 @@ export async function About({ locale }: AboutProps) {
   const t = await getTranslations("about");
 
   return (
-    <SectionReveal
-      id="about"
-      className="section-padding-about relative overflow-hidden"
-    >
-      <AboutDecorations />
-
-      <div className="section-inner relative z-10 gap-5 md:gap-7">
+    <SectionReveal id="about" className="section-padding-about">
+      <div className="section-inner gap-5 md:gap-7">
         <div className="flex flex-col gap-2">
           <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             {t("title")}

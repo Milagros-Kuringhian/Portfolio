@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-import { SkillsDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { SkillsMarquee } from "@/components/sections/SkillsMarquee";
@@ -15,13 +14,8 @@ export async function Skills({ locale }: SkillsProps) {
   const t = await getTranslations("skills");
 
   return (
-    <SectionReveal
-      id="skills"
-      className="relative section-padding-tight-top overflow-hidden"
-    >
-      <SkillsDecorations />
-
-      <div className="section-inner relative z-10">
+    <SectionReveal id="skills" className="section-padding-tight-top">
+      <div className="section-inner">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
         <div className="flex flex-col gap-5 md:gap-6">

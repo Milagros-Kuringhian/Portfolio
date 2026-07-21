@@ -1,7 +1,6 @@
 import { GraduationCap } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { EducationDecorations } from "@/components/layout/DecorativeShapes";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { education } from "@/data/education";
@@ -16,10 +15,8 @@ export async function Education({ locale }: EducationProps) {
   const t = await getTranslations("education");
 
   return (
-    <SectionReveal id="education" className="relative section-padding overflow-hidden">
-      <EducationDecorations />
-
-      <div className="section-inner relative z-10">
+    <SectionReveal id="education" className="section-padding">
+      <div className="section-inner">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
         <div className="flex flex-col">
