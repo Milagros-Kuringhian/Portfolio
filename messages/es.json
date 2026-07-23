@@ -33,7 +33,13 @@
     "subtitle": "Selección de trabajos donde combino diseño, código y atención al detalle.",
     "viewAll": "Ver todos los proyectos",
     "openProject": "Abrir proyecto",
-    "viewCode": "Ver código"
+    "viewCode": "Ver código",
+    "carouselLabel": "Carrusel de proyectos",
+    "prev": "Proyectos anteriores",
+    "next": "Más proyectos",
+    "allTitle": "Todos los proyectos",
+    "allSubtitle": "Listado completo de trabajos de mi portfolio.",
+    "back": "Volver a proyectos"
   },
   "skills": {
     "title": "Habilidades",

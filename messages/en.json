@@ -33,7 +33,13 @@
     "subtitle": "A selection of work where I combine design, code, and attention to detail.",
     "viewAll": "View all projects",
     "openProject": "Open project",
-    "viewCode": "View code"
+    "viewCode": "View code",
+    "carouselLabel": "Projects carousel",
+    "prev": "Previous projects",
+    "next": "More projects",
+    "allTitle": "All projects",
+    "allSubtitle": "Full list of work from my portfolio.",
+    "back": "Back to projects"
   },
   "skills": {
     "title": "Skills",
