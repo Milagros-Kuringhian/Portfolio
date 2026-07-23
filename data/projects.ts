@@ -7,7 +7,7 @@ export type Project = {
   image: string;
   tech: string[];
   liveUrl?: string;
-  githubUrl: string;
+  githubUrl?: string;
   /** How the preview image is framed in the card. Defaults to `"window"`. */
   preview?: "window" | "phone";
 };
@@ -57,5 +57,18 @@ export const projects: Project[] = [
     tech: ["PWA", "HTML", "CSS", "JavaScript"],
     liveUrl: "https://milagros-kuringhian.github.io/Gestor-de-Gastos/",
     githubUrl: "https://github.com/Milagros-Kuringhian/Gestor-de-Gastos",
+  },
+  {
+    id: "tienda-mate",
+    title: {
+      es: "Tienda Mate",
+      en: "Mate Store",
+    },
+    description: {
+      es: "Tienda online de mates y accesorios, armada con WordPress, WooCommerce y Elementor.",
+      en: "Online store for mate gourds and accessories, built with WordPress, WooCommerce, and Elementor.",
+    },
+    image: "/images/tienda-mate.png",
+    tech: ["WordPress", "WooCommerce", "Elementor", "Blocksy"],
   },
 ];

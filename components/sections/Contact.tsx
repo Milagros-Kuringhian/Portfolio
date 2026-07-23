@@ -27,14 +27,14 @@ export function Contact() {
   return (
     <SectionReveal id="contact" className="section-padding-tight-top flex flex-col justify-center">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
-        <div className="rounded-3xl bg-[color-mix(in_oklch,var(--primary),transparent_88%)] px-6 py-7 sm:px-9 sm:py-9 md:px-11 md:py-10">
+        <div className="rounded-3xl bg-section-alt px-6 py-7 sm:px-9 sm:py-9 md:px-11 md:py-10">
           <div className="grid gap-6 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-8">
             <div className="flex min-w-0 flex-col gap-4">
               <div className="flex flex-col gap-3">
                 <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
                   {t("title")}
                 </h2>
-                <span className="h-0.5 w-10 rounded-full bg-primary" aria-hidden />
+                <span className="h-0.5 w-10 rounded-full bg-accent" aria-hidden />
                 <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
                   {t("subtitle")}
                 </p>
@@ -51,7 +51,7 @@ export function Contact() {
 
             <div className="flex min-w-0 flex-col gap-5">
               <div className="flex items-start gap-3">
-                <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <Mail className="mt-0.5 size-4 shrink-0 text-secondary dark:text-accent" aria-hidden />
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {t("email")}
@@ -59,7 +59,7 @@ export function Contact() {
                   <div className="mt-1 flex flex-wrap items-center gap-2">
                     <a
                       href={`mailto:${profile.email}`}
-                      className="break-all text-sm font-medium text-foreground underline-offset-4 hover:text-primary hover:underline"
+                      className="break-all text-sm font-medium text-foreground underline-offset-4 hover:text-secondary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:text-accent dark:hover:text-secondary"
                     >
                       {profile.email}
                     </a>
@@ -67,7 +67,7 @@ export function Contact() {
                       variant="ghost"
                       size="xs"
                       onClick={handleCopyEmail}
-                      className="text-primary hover:text-primary"
+                      className="text-secondary hover:text-foreground dark:text-accent dark:hover:text-secondary"
                     >
                       {copied ? t("copied") : t("copyEmail")}
                     </Button>
@@ -79,7 +79,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <MapPin className="mt-0.5 size-4 shrink-0 text-secondary dark:text-accent" aria-hidden />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {t("location")}
@@ -94,7 +94,7 @@ export function Contact() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="rounded-full border-border/60 bg-background/60"
+                  className="rounded-full border-secondary/60 bg-background/60"
                   render={
                     <a
                       href={profile.github}
@@ -111,7 +111,7 @@ export function Contact() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="rounded-full border-border/60 bg-background/60"
+                    className="rounded-full border-secondary/60 bg-background/60"
                     render={
                       <a
                         href={profile.linkedin}
@@ -129,7 +129,7 @@ export function Contact() {
                     variant="outline"
                     size="sm"
                     disabled
-                    className="rounded-full border-border/60 bg-background/60"
+                    className="rounded-full border-secondary/60 bg-background/60"
                     aria-label={`${t("linkedin")} — ${t("linkedinComingSoon")}`}
                   >
                     <LinkedInIcon className="size-4" data-icon="inline-start" />

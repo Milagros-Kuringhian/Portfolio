@@ -10,8 +10,8 @@ const accentIconClass: Record<
   NonNullable<SkillChipsProps["accent"]>,
   string
 > = {
-  primary: "text-primary",
-  secondary: "text-secondary-foreground",
+  primary: "text-foreground",
+  secondary: "text-secondary",
   accent: "text-accent",
 };
 

@@ -12,9 +12,9 @@ interface ExperienceProps {
 }
 
 const timelineDotColors = [
-  "bg-primary",
-  "bg-secondary",
   "bg-accent",
+  "bg-secondary",
+  "bg-[var(--primary-hover)]",
 ] as const;
 
 export async function Experience({ locale }: ExperienceProps) {
@@ -25,7 +25,7 @@ export async function Experience({ locale }: ExperienceProps) {
       <div className="section-inner">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
-        <StaggerReveal className="relative ml-2 flex flex-col gap-6 border-l border-primary/20 pl-7 sm:ml-0 sm:pl-9 md:gap-7">
+        <StaggerReveal className="relative ml-2 flex flex-col gap-6 border-l border-secondary/30 pl-7 sm:ml-0 sm:pl-9 md:gap-7">
           {experiences.map((item, index) => (
             <StaggerItem
               key={item.id}
@@ -39,7 +39,7 @@ export async function Experience({ locale }: ExperienceProps) {
                 )}
               />
               <div className="flex flex-col gap-1.5">
-                <p className="text-sm font-medium text-primary">
+                <p className="text-sm font-medium text-secondary dark:text-accent">
                   {item.period[locale]}
                 </p>
                 <h3 className="font-heading text-lg font-semibold text-foreground sm:text-xl">

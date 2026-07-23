@@ -18,9 +18,9 @@ const valueIcons = {
 } as const;
 
 const valueToneStyles = {
-  primary: "bg-primary/15 text-primary",
-  secondary: "bg-secondary/30 text-secondary-foreground",
-  accent: "bg-accent/15 text-accent",
+  primary: "bg-primary/15 text-primary dark:bg-[rgba(93,100,114,0.55)] dark:text-foreground",
+  secondary: "bg-secondary/20 text-secondary",
+  accent: "bg-accent/55 text-accent-foreground dark:bg-accent dark:text-accent-foreground",
 } as const;
 
 export async function About({ locale }: AboutProps) {
@@ -33,7 +33,7 @@ export async function About({ locale }: AboutProps) {
           <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             {t("title")}
           </h2>
-          <span className="h-0.5 w-10 rounded-full bg-primary" aria-hidden />
+          <span className="h-0.5 w-10 rounded-full bg-accent" aria-hidden />
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-0">
@@ -41,7 +41,7 @@ export async function About({ locale }: AboutProps) {
             <div className="flex size-[4.5rem] shrink-0 items-center justify-center rounded-[2rem_1.25rem_2rem_1.5rem] bg-accent sm:size-20">
               <span
                 aria-hidden
-                className="block size-11 bg-white sm:size-12"
+                className="block size-11 bg-background sm:size-12"
                 style={{
                   maskImage: "url(/images/plant-icon.png)",
                   maskSize: "contain",
@@ -61,7 +61,7 @@ export async function About({ locale }: AboutProps) {
               </p>
               <a
                 href="#experience"
-                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-secondary transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:text-accent dark:hover:text-secondary"
               >
                 {t("learnMore")}
                 <ArrowRight className="size-4" aria-hidden />

@@ -47,15 +47,15 @@ function DotGrid({
 function HeroAvatarDecor() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0">
-      {/* Coral circle — peeks above the top-right rim */}
+      {/* Accent circle — peeks above the top-right rim */}
       <div className="absolute -right-[6%] -top-[4%] size-[28%] rounded-full bg-accent sm:-right-[8%] sm:-top-[6%] sm:size-[26%]" />
 
-      {/* Teal dots — top left */}
-      <DotGrid className="absolute -left-[2%] top-[2%] size-[20%] text-primary sm:-left-[4%] sm:size-[18%]" />
+      {/* Soft dots — top left */}
+      <DotGrid className="absolute -left-[2%] top-[2%] size-[20%] text-accent sm:-left-[4%] sm:size-[18%]" />
 
-      {/* Teal wave — bottom left, outside the circle rim */}
+      {/* Caramel wave — bottom left, outside the circle rim */}
       <svg
-        className="absolute -left-[8%] bottom-[6%] w-[48%] text-primary sm:-left-[10%] sm:bottom-[4%] sm:w-[44%]"
+        className="absolute -left-[8%] bottom-[6%] w-[48%] text-secondary sm:-left-[10%] sm:bottom-[4%] sm:w-[44%]"
         viewBox="0 0 120 28"
         fill="none"
       >
@@ -67,8 +67,8 @@ function HeroAvatarDecor() {
         />
       </svg>
 
-      {/* Teal dots — bottom right */}
-      <DotGrid className="absolute -bottom-[2%] -right-[2%] size-[16%] text-primary sm:-right-[4%] sm:size-[14%]" />
+      {/* Slate dots — bottom right */}
+      <DotGrid className="absolute -bottom-[2%] -right-[2%] size-[16%] text-muted-foreground sm:-right-[4%] sm:size-[14%]" />
     </div>
   );
 }
@@ -83,17 +83,17 @@ export async function Hero({ locale }: HeroProps) {
     >
       <div className="relative z-10 flex w-full min-w-0 flex-[1_1_52%] flex-col gap-6 md:max-w-[52%] md:gap-7">
         <div className="flex flex-col gap-4 md:gap-5">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-secondary sm:text-xs">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground sm:text-xs">
             {profile.title[locale]}
           </p>
 
           <h1 className="font-heading text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-[2.65rem] lg:text-[2.85rem]">
             {t.rich("headline", {
               highlight: (chunks) => (
-                <span className="text-primary">{chunks}</span>
+                <span className="text-secondary dark:text-accent">{chunks}</span>
               ),
               accent: (chunks) => (
-                <span className="text-primary">{chunks}</span>
+                <span className="text-secondary dark:text-accent">{chunks}</span>
               ),
             })}
           </h1>
@@ -112,7 +112,7 @@ export async function Hero({ locale }: HeroProps) {
             <ArrowRight data-icon="inline-end" />
           </Button>
           <Button
-            className="h-11 w-full rounded-md border-foreground/80 bg-background px-7 text-sm text-foreground hover:bg-muted has-data-[icon=inline-start]:pl-7 sm:w-auto"
+            className="h-11 w-full rounded-md px-7 text-sm has-data-[icon=inline-start]:pl-7 sm:w-auto"
             variant="outline"
             render={<a href="/cv.pdf" download="CV-Milagros.pdf" />}
           >
@@ -124,7 +124,7 @@ export async function Hero({ locale }: HeroProps) {
         <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
           <span
             aria-hidden
-            className="size-2 shrink-0 rounded-full bg-primary"
+            className="size-2 shrink-0 rounded-full bg-accent"
           />
           {profile.availability[locale]}
         </p>

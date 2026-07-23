@@ -15,7 +15,7 @@ const accentIconClass: Record<
   NonNullable<SkillsMarqueeProps["accent"]>,
   string
 > = {
-  primary: "text-primary",
+  primary: "text-foreground",
   secondary: "text-secondary",
   accent: "text-accent",
 };
@@ -51,7 +51,7 @@ export function SkillsMarquee({
             <div
               key={`${skill}-${index}`}
               aria-hidden={isDuplicate || undefined}
-              className="flex shrink-0 items-center gap-3 rounded-full border border-border/40 bg-card px-5 py-3 shadow-[0_6px_24px_-8px_rgba(20,43,69,0.15)]"
+              className="flex shrink-0 items-center gap-3 rounded-full border border-border/40 bg-card px-5 py-3 shadow-[0_6px_24px_-8px_rgba(var(--shadow-primary),0.12)]"
             >
               <Icon className={cn("size-5", accentIconClass[accent])} aria-hidden />
               <span className="text-sm font-medium text-foreground">{skill}</span>

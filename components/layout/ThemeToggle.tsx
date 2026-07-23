@@ -25,7 +25,14 @@ export function ThemeToggle() {
   const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   if (!mounted) {
-    return <Button variant="ghost" size="icon" aria-hidden className="size-9" />;
+    return (
+      <Button
+        variant="ghost"
+        size="icon"
+        aria-hidden
+        className="size-9 border border-theme-toggle-border bg-theme-toggle"
+      />
+    );
   }
 
   const isDark = resolvedTheme === "dark";
@@ -34,7 +41,7 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
-      className="size-9"
+      className="size-9 border border-theme-toggle-border bg-theme-toggle text-foreground hover:bg-theme-toggle-hover dark:text-accent"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? t("light") : t("dark")}
     >

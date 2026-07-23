@@ -8,7 +8,7 @@ export default async function NotFoundPage() {
 
   return (
     <section className="mx-auto flex min-h-[50vh] w-full max-w-6xl flex-col items-center justify-center gap-6 px-4 py-24 text-center md:px-6">
-      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-secondary dark:text-accent">
         404
       </p>
       <h1 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">

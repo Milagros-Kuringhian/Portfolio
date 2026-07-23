@@ -29,13 +29,13 @@ export function Header() {
   const [activeSection, setActiveSection] = useState<NavKey | null>("home");
 
   const linkClassName =
-    "relative rounded-md px-1 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "relative rounded-md px-1 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   function getNavLinkClassName(key: NavKey) {
     return cn(
       linkClassName,
       activeSection === key &&
-        "text-primary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
+        "text-secondary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-secondary dark:text-accent dark:after:bg-accent",
     );
   }
 
@@ -89,11 +89,11 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/85 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 border-b border-header-border bg-header backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <a
           href="#hero"
-          className="shrink-0 font-heading text-base font-semibold tracking-tight text-foreground transition-colors hover:text-primary md:text-lg"
+          className="shrink-0 font-heading text-base font-semibold tracking-tight text-foreground transition-colors hover:text-secondary md:text-lg"
           aria-label={tA11y("homeLink")}
         >
           {profile.firstName}
@@ -133,7 +133,7 @@ export function Header() {
 
       <nav
         className={cn(
-          "border-t border-border/40 lg:hidden",
+          "border-t border-header-border lg:hidden",
           isOpen ? "block" : "hidden",
         )}
         aria-label={t("mobile")}

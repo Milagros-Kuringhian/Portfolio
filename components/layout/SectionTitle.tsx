@@ -25,7 +25,7 @@ export function SectionTitle({
           <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             {title}
           </h2>
-          <span className="h-0.5 w-10 rounded-full bg-primary" aria-hidden />
+          <span className="h-0.5 w-10 rounded-full bg-accent" aria-hidden />
         </div>
         {subtitle ? (
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">

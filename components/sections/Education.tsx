@@ -29,7 +29,7 @@ export async function Education({ locale }: EducationProps) {
               )}
             >
               <div className="flex min-w-0 items-start gap-3">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/20 text-secondary dark:text-accent">
                   <GraduationCap className="size-4" aria-hidden />
                 </div>
                 <div className="min-w-0">
@@ -41,7 +41,7 @@ export async function Education({ locale }: EducationProps) {
                   </p>
                 </div>
               </div>
-              <p className="shrink-0 pl-12 text-sm font-medium text-primary sm:pl-0">
+              <p className="shrink-0 pl-12 text-sm font-medium text-secondary sm:pl-0 dark:text-accent">
                 {item.period[locale]}
               </p>
             </article>
