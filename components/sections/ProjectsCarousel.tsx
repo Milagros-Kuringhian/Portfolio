@@ -120,7 +120,7 @@ export function ProjectsCarousel({
         variant="outline"
         size="icon"
         className={cn(
-          "absolute top-1/2 left-0 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-border bg-card/95 shadow-sm backdrop-blur-sm",
+          "absolute top-1/2 left-2 z-10 -translate-y-1/2 rounded-full border-border bg-card/95 shadow-sm backdrop-blur-sm",
           !canPrev && "invisible pointer-events-none",
         )}
         aria-label={t("prev")}
@@ -135,7 +135,7 @@ export function ProjectsCarousel({
         variant="outline"
         size="icon"
         className={cn(
-          "absolute top-1/2 right-0 z-10 translate-x-1/2 -translate-y-1/2 rounded-full border-border bg-card/95 shadow-sm backdrop-blur-sm",
+          "absolute top-1/2 right-2 z-10 -translate-y-1/2 rounded-full border-border bg-card/95 shadow-sm backdrop-blur-sm",
           !canNext && "invisible pointer-events-none",
         )}
         aria-label={t("next")}
