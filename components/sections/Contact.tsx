@@ -25,7 +25,7 @@ export function Contact() {
   }
 
   return (
-    <SectionReveal id="contact" className="section-padding-tight-top">
+    <SectionReveal id="contact" className="section-padding-tight-top flex flex-col justify-center">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
         <div className="rounded-3xl bg-[color-mix(in_oklch,var(--primary),transparent_88%)] px-6 py-7 sm:px-9 sm:py-9 md:px-11 md:py-10">
           <div className="grid gap-6 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-8">

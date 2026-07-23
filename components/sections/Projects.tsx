@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 
 import { SectionReveal } from "@/components/layout/SectionReveal";
 import { SectionTitle } from "@/components/layout/SectionTitle";
+import { StickySectionHead } from "@/components/motion/StickySectionHead";
+import { StaggerItem, StaggerReveal } from "@/components/motion/StaggerReveal";
 import { ProjectCard } from "@/components/sections/ProjectCard";
 import { projects } from "@/data/projects";
 import type { Locale } from "@/i18n";
@@ -17,32 +19,35 @@ export async function Projects({ locale }: ProjectsProps) {
   return (
     <SectionReveal id="projects" className="section-padding bg-section-alt">
       <div className="section-inner">
-        <SectionTitle
-          title={t("title")}
-          subtitle={t("subtitle")}
-          action={
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              {t("viewAll")}
-              <ArrowRight className="size-4" aria-hidden />
-            </a>
-          }
-        />
+        <StickySectionHead>
+          <SectionTitle
+            title={t("title")}
+            subtitle={t("subtitle")}
+            action={
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                {t("viewAll")}
+                <ArrowRight className="size-4" aria-hidden />
+              </a>
+            }
+          />
+        </StickySectionHead>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <StaggerReveal className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              locale={locale}
-              liveDemoLabel={t("liveDemo")}
-              viewCodeLabel={t("viewCode")}
-              accentIndex={index}
-            />
+            <StaggerItem key={project.id} className="h-full">
+              <ProjectCard
+                project={project}
+                locale={locale}
+                openProjectLabel={t("openProject")}
+                viewCodeLabel={t("viewCode")}
+                accentIndex={index}
+              />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </SectionReveal>
   );

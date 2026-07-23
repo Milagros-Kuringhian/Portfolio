@@ -25,6 +25,7 @@ export const projects: Project[] = [
     },
     image: "/images/app-peliculas.png",
     tech: ["Vue", "JavaScript", "CSS", "Vite"],
+    liveUrl: "https://app-peliculas-sage.vercel.app",
     githubUrl: "https://github.com/Milagros-Kuringhian/App-Peliculas",
   },
   {
@@ -39,6 +40,7 @@ export const projects: Project[] = [
     },
     image: "/images/landing-resina.png",
     tech: ["Astro", "Vue", "Tailwind CSS", "TypeScript"],
+    liveUrl: "https://resina-x-chechi.vercel.app",
     githubUrl: "https://github.com/Milagros-Kuringhian/Resina-x-Chechi",
   },
   {
@@ -53,6 +55,7 @@ export const projects: Project[] = [
     },
     image: "/images/gestor-gastos-preview.png",
     tech: ["PWA", "HTML", "CSS", "JavaScript"],
+    liveUrl: "https://milagros-kuringhian.github.io/Gestor-de-Gastos/",
     githubUrl: "https://github.com/Milagros-Kuringhian/Gestor-de-Gastos",
   },
 ];

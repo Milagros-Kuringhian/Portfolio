@@ -2,7 +2,6 @@
 
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -16,7 +15,7 @@ import { cn } from "@/lib/utils";
 interface ProjectCardProps {
   project: Project;
   locale: Locale;
-  liveDemoLabel: string;
+  openProjectLabel: string;
   viewCodeLabel: string;
   accentIndex?: number;
 }
@@ -26,7 +25,7 @@ const tagVariants = ["secondary", "default"] as const;
 export function ProjectCard({
   project,
   locale,
-  liveDemoLabel,
+  openProjectLabel,
   viewCodeLabel,
   accentIndex = 0,
 }: ProjectCardProps) {
@@ -35,6 +34,8 @@ export function ProjectCard({
   const externalLabel = tA11y("opensInNewTab");
   const primaryTag = project.tech[0];
   const preview = project.preview ?? "window";
+  const title = project.title[locale];
+  const hasLiveUrl = Boolean(project.liveUrl);
 
   const imageMotionClass = cn(
     !shouldReduceMotion &&
@@ -53,7 +54,7 @@ export function ProjectCard({
         >
           <Image
             src={project.image}
-            alt={project.title[locale]}
+            alt={hasLiveUrl ? "" : title}
             fill
             sizes="(max-width: 768px) 40vw, 180px"
             className="object-cover object-top"
@@ -71,7 +72,7 @@ export function ProjectCard({
         >
           <Image
             src={project.image}
-            alt={project.title[locale]}
+            alt={hasLiveUrl ? "" : title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-cover"
@@ -99,23 +100,34 @@ export function ProjectCard({
     >
       <div
         className={cn(
-          "flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-[0_4px_24px_-8px_rgba(var(--shadow-primary),0.1)] transition-[box-shadow,transform] duration-300",
+          "relative flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-[0_4px_24px_-8px_rgba(var(--shadow-primary),0.1)] transition-[box-shadow,transform] duration-300",
           "hover:shadow-[0_12px_32px_-10px_rgba(var(--shadow-primary),0.15)]",
+          hasLiveUrl && "cursor-pointer",
         )}
       >
+        {project.liveUrl ? (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute inset-0 z-[1] rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            aria-label={`${openProjectLabel}: ${title} ${externalLabel}`}
+          />
+        ) : null}
+
         <div
           className={cn(
-            "relative flex aspect-[16/10] items-center justify-center overflow-hidden p-3 sm:p-4",
+            "pointer-events-none relative flex aspect-[16/10] items-center justify-center overflow-hidden p-3 sm:p-4",
             "bg-[color-mix(in_srgb,var(--muted)_70%,var(--primary)_8%)]",
           )}
         >
           {previewFrame}
         </div>
 
-        <div className="flex flex-1 flex-col gap-2.5 p-4 sm:p-5">
+        <div className="pointer-events-none relative flex flex-1 flex-col gap-2.5 p-4 sm:p-5">
           <div className="flex flex-col gap-1.5">
             <h3 className="font-heading text-lg font-semibold text-foreground sm:text-xl">
-              {project.title[locale]}
+              {title}
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {project.description[locale]}
@@ -131,25 +143,7 @@ export function ProjectCard({
             </Badge>
           ) : null}
 
-          <div className="mt-auto flex flex-wrap gap-2 pt-2">
-            {project.liveUrl ? (
-              <Button
-                variant="default"
-                size="sm"
-                className="rounded-full"
-                render={
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${liveDemoLabel} ${externalLabel}`}
-                  />
-                }
-              >
-                <ExternalLink data-icon="inline-start" />
-                {liveDemoLabel}
-              </Button>
-            ) : null}
+          <div className="pointer-events-auto relative z-[2] mt-auto flex flex-wrap gap-2 pt-2">
             <Button
               variant="outline"
               size="sm"

@@ -15,7 +15,7 @@ export async function Education({ locale }: EducationProps) {
   const t = await getTranslations("education");
 
   return (
-    <SectionReveal id="education" className="section-padding">
+    <SectionReveal id="education" className="section-padding flex flex-col justify-center">
       <div className="section-inner">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 

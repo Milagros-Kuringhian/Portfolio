@@ -14,7 +14,7 @@ export async function Skills({ locale }: SkillsProps) {
   const t = await getTranslations("skills");
 
   return (
-    <SectionReveal id="skills" className="section-padding-tight-top">
+    <SectionReveal id="skills" className="section-padding-tight-top flex flex-col justify-center">
       <div className="section-inner">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 

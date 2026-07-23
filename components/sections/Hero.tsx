@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { SectionReveal } from "@/components/layout/SectionReveal";
+import { HeroScroll } from "@/components/motion/HeroScroll";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 import type { Locale } from "@/i18n";
@@ -77,9 +77,9 @@ export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations("hero");
 
   return (
-    <SectionReveal
+    <HeroScroll
       id="hero"
-      className="section-padding-hero relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 overflow-visible px-4 sm:gap-12 md:max-h-[720px] md:min-h-[560px] md:flex-row md:items-center md:justify-between md:gap-8 md:px-6 lg:gap-12"
+      className="section-padding-hero relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 overflow-visible px-4 sm:gap-12 md:flex-row md:items-center md:justify-between md:gap-8 md:px-6 lg:gap-12"
     >
       <div className="relative z-10 flex w-full min-w-0 flex-[1_1_52%] flex-col gap-6 md:max-w-[52%] md:gap-7">
         <div className="flex flex-col gap-4 md:gap-5">
@@ -145,6 +145,6 @@ export async function Hero({ locale }: HeroProps) {
           </div>
         </div>
       </div>
-    </SectionReveal>
+    </HeroScroll>
   );
 }
