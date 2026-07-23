@@ -13,50 +13,50 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    id: "freelance-frontend",
+    id: "casa-okis",
     role: {
-      es: "Desarrollador/a Frontend Freelance",
-      en: "Freelance Frontend Developer",
+      es: "Asistente comercial y de e-commerce",
+      en: "Commercial & E-commerce Assistant",
     },
-    company: "Proyectos independientes",
+    company: "Casa Okis",
     period: {
-      es: "2024 — Presente",
+      es: "2024 — Actualidad",
       en: "2024 — Present",
     },
     highlights: {
       es: [
-        "Desarrollo de landing pages responsive para pequeños negocios.",
-        "Implementación de componentes reutilizables con React y Tailwind CSS.",
-        "Optimización de rendimiento y accesibilidad básica en cada entrega.",
+        "Gestión y actualización de productos en Mercado Libre, Tiendanube y sitio web.",
+        "Control de stock, facturación y tareas administrativas.",
+        "Atención al cliente y apoyo operativo general del negocio.",
       ],
       en: [
-        "Built responsive landing pages for small businesses.",
-        "Implemented reusable components with React and Tailwind CSS.",
-        "Improved performance and basic accessibility in every delivery.",
+        "Managed and updated products on Mercado Libre, Tiendanube, and the website.",
+        "Handled stock control, invoicing, and administrative tasks.",
+        "Provided customer support and day-to-day operational help.",
       ],
     },
   },
   {
-    id: "bootcamp-projects",
+    id: "delfino-dulce",
     role: {
-      es: "Estudiante de Bootcamp",
-      en: "Bootcamp Student",
+      es: "Encargada",
+      en: "Store Supervisor",
     },
-    company: "Academia de Desarrollo Web",
+    company: "Pastelería Delfino Dulce",
     period: {
-      es: "2023 — 2024",
-      en: "2023 — 2024",
+      es: "Abr 2023 — Nov 2023",
+      en: "Apr 2023 — Nov 2023",
     },
     highlights: {
       es: [
-        "Completé proyectos prácticos con HTML, CSS, JavaScript y React.",
-        "Trabajé en equipo usando Git y metodologías ágiles.",
-        "Presenté un proyecto final con enfoque en UX y diseño responsive.",
+        "Coordinación del equipo y organización del flujo de trabajo diario.",
+        "Supervisión de operación, tiempos y cumplimiento de estándares de servicio.",
+        "Atención al cliente y resolución de incidencias en el local.",
       ],
       en: [
-        "Completed hands-on projects with HTML, CSS, JavaScript, and React.",
-        "Collaborated in teams using Git and agile methodologies.",
-        "Presented a final project focused on UX and responsive design.",
+        "Coordinated the team and organized daily workflows.",
+        "Supervised operations, timing, and service standards.",
+        "Handled customer service and on-site issue resolution.",
       ],
     },
   },

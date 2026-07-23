@@ -107,22 +107,35 @@ export function Contact() {
                   <GitHubIcon className="size-4" data-icon="inline-start" />
                   {t("github")}
                 </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="rounded-full border-border/60 bg-background/60"
-                  render={
-                    <a
-                      href={profile.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${t("linkedin")} ${tA11y("opensInNewTab")}`}
-                    />
-                  }
-                >
-                  <LinkedInIcon className="size-4" data-icon="inline-start" />
-                  {t("linkedin")}
-                </Button>
+                {profile.linkedin ? (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="rounded-full border-border/60 bg-background/60"
+                    render={
+                      <a
+                        href={profile.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${t("linkedin")} ${tA11y("opensInNewTab")}`}
+                      />
+                    }
+                  >
+                    <LinkedInIcon className="size-4" data-icon="inline-start" />
+                    {t("linkedin")}
+                  </Button>
+                ) : (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled
+                    className="rounded-full border-border/60 bg-background/60"
+                    aria-label={`${t("linkedin")} — ${t("linkedinComingSoon")}`}
+                  >
+                    <LinkedInIcon className="size-4" data-icon="inline-start" />
+                    {t("linkedin")} — {t("linkedinComingSoon")}
+                  </Button>
+                )}
               </div>
             </div>
           </div>

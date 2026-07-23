@@ -8,6 +8,8 @@ export type Project = {
   tech: string[];
   liveUrl?: string;
   githubUrl: string;
+  /** How the preview image is framed in the card. Defaults to `"window"`. */
+  preview?: "window" | "phone";
 };
 
 export const projects: Project[] = [
@@ -18,53 +20,39 @@ export const projects: Project[] = [
       en: "Movies App",
     },
     description: {
-      es: "Aplicación para explorar películas, construida con Vue y Vite.",
-      en: "Application to browse movies, built with Vue and Vite.",
+      es: "Aplicación para explorar películas, construida con Vue.",
+      en: "Application to browse movies, built with Vue.",
     },
     image: "/images/app-peliculas.png",
     tech: ["Vue", "JavaScript", "CSS", "Vite"],
     githubUrl: "https://github.com/Milagros-Kuringhian/App-Peliculas",
   },
   {
-    id: "weather-app",
+    id: "landing-resina",
     title: {
-      es: "App del Clima",
-      en: "Weather App",
+      es: "Landing Resina",
+      en: "Resin Landing",
     },
     description: {
-      es: "Aplicación para consultar el clima en tiempo real con búsqueda por ciudad y diseño responsive.",
-      en: "Real-time weather application with city search and a responsive layout.",
+      es: "Catálogo web de artesanías en resina, con pedidos por WhatsApp.",
+      en: "Web catalog for resin crafts, with WhatsApp ordering.",
     },
-    image: "/images/project-weather-app.svg",
-    tech: ["HTML", "CSS", "JavaScript", "API"],
-    githubUrl: "https://github.com",
+    image: "/images/landing-resina.png",
+    tech: ["Astro", "Vue", "Tailwind CSS", "TypeScript"],
+    githubUrl: "https://github.com/Milagros-Kuringhian/Resina-x-Chechi",
   },
   {
-    id: "task-manager",
+    id: "gestor-de-gastos",
     title: {
-      es: "Gestor de Tareas",
-      en: "Task Manager",
+      es: "Gestor de Gastos",
+      en: "Expense Tracker",
     },
     description: {
-      es: "Herramienta para organizar tareas con filtros, estados y persistencia en el navegador.",
-      en: "Task organization tool with filters, statuses, and browser persistence.",
+      es: "PWA instalable para anotar ingresos, gastos y ahorros en 2 toques. Datos en el celular, con export CSV.",
+      en: "Installable PWA to log income, expenses, and savings in 2 taps. Data stays on the phone, with CSV export.",
     },
-    image: "/images/project-task-manager.svg",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com",
-  },
-  {
-    id: "portfolio-v1",
-    title: {
-      es: "Portfolio Personal",
-      en: "Personal Portfolio",
-    },
-    description: {
-      es: "Este sitio: portfolio bilingüe con modo claro/oscuro, animaciones sutiles y contenido editable desde data/.",
-      en: "This site: bilingual portfolio with light/dark mode, subtle animations, and content editable from data/.",
-    },
-    image: "/images/project-portfolio.svg",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com",
+    image: "/images/gestor-gastos-preview.png",
+    tech: ["PWA", "HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/Milagros-Kuringhian/Gestor-de-Gastos",
   },
 ];

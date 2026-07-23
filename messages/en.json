@@ -18,7 +18,7 @@
   },
   "hero": {
     "headline": "I create <highlight>modern</highlight>, <highlight>functional</highlight> web experiences crafted with care<accent>.</accent>",
-    "description": "I'm Milagros, a frontend developer passionate about turning ideas into clear, accessible interfaces designed for people.",
+    "description": "I'm Milagros, a junior frontend developer. I combine Web Programming and Design studies with hands-on e-commerce and digital operations experience.",
     "viewProjects": "View my projects",
     "downloadCv": "Download CV",
     "imageAlt": "Profile photo of {name}"
@@ -50,7 +50,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Have a project in mind? Let's talk.",
+    "subtitle": "Looking for someone for a junior role or a digital project? Let's talk.",
     "email": "Email",
     "copyEmail": "Copy email",
     "copied": "Copied!",
@@ -62,13 +62,15 @@
     "downloadCv": "Download CV",
     "github": "GitHub",
     "linkedin": "LinkedIn",
+    "linkedinComingSoon": "Coming soon",
     "location": "Location",
-    "locationValue": "Remote / Argentina"
+    "locationValue": "CABA, Argentina"
   },
   "footer": {
     "rights": "All rights reserved.",
     "github": "Visit GitHub profile",
-    "linkedin": "Visit LinkedIn profile"
+    "linkedin": "Visit LinkedIn profile",
+    "linkedinComingSoon": "LinkedIn — Coming soon"
   },
   "language": {
     "groupLabel": "Select language",

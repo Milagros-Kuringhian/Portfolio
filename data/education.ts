@@ -4,17 +4,32 @@ export type Education = {
   id: string;
   institution: string;
   degree: LocalizedString;
-  period: string;
+  period: LocalizedString;
 };
 
 export const education: Education[] = [
   {
-    id: "web-dev-bootcamp",
-    institution: "Academia de Desarrollo Web",
+    id: "davinci",
+    institution: "Escuela Da Vinci",
     degree: {
-      es: "Bootcamp de Desarrollo Web Full Stack",
-      en: "Full Stack Web Development Bootcamp",
+      es: "Programación y Diseño Web",
+      en: "Web Programming and Design",
     },
-    period: "2023 — 2024",
+    period: {
+      es: "En curso",
+      en: "In progress",
+    },
+  },
+  {
+    id: "marie-manoogian",
+    institution: "Instituto Marie Manoogian",
+    degree: {
+      es: "Bachiller en Economía y Administración",
+      en: "High School Diploma in Economics and Administration",
+    },
+    period: {
+      es: "Finalizado",
+      en: "Completed",
+    },
   },
 ];

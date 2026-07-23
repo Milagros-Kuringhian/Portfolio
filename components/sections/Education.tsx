@@ -42,7 +42,7 @@ export async function Education({ locale }: EducationProps) {
                 </div>
               </div>
               <p className="shrink-0 pl-12 text-sm font-medium text-primary sm:pl-0">
-                {item.period}
+                {item.period[locale]}
               </p>
             </article>
           ))}

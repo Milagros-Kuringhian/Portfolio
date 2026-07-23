@@ -18,7 +18,7 @@
   },
   "hero": {
     "headline": "Creo experiencias web <highlight>modernas</highlight>, <highlight>funcionales</highlight> y cuidadas al detalle<accent>.</accent>",
-    "description": "Soy Milagros, desarrolladora frontend apasionada por convertir ideas en interfaces claras, accesibles y pensadas para las personas.",
+    "description": "Soy Milagros, desarrolladora frontend junior. Combino formación en Programación y Diseño Web con experiencia en e-commerce y gestión digital.",
     "viewProjects": "Ver mis proyectos",
     "downloadCv": "Descargar CV",
     "imageAlt": "Foto de perfil de {name}"
@@ -50,7 +50,7 @@
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "¿Tienes un proyecto en mente? Escríbeme.",
+    "subtitle": "¿Buscás alguien para un rol junior o un proyecto digital? Escríbime.",
     "email": "Email",
     "copyEmail": "Copiar email",
     "copied": "¡Copiado!",
@@ -62,13 +62,15 @@
     "downloadCv": "Descargar CV",
     "github": "GitHub",
     "linkedin": "LinkedIn",
+    "linkedinComingSoon": "Próximamente",
     "location": "Ubicación",
-    "locationValue": "Remoto / Argentina"
+    "locationValue": "CABA, Argentina"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
     "github": "Visitar perfil de GitHub",
-    "linkedin": "Visitar perfil de LinkedIn"
+    "linkedin": "Visitar perfil de LinkedIn",
+    "linkedinComingSoon": "LinkedIn — Próximamente"
   },
   "language": {
     "groupLabel": "Seleccionar idioma",

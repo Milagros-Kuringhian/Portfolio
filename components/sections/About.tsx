@@ -1,4 +1,4 @@
-import { ArrowRight, Heart, Rocket, Sparkles, Sprout } from "lucide-react";
+import { ArrowRight, Heart, Rocket, Sprout, Users } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { SectionReveal } from "@/components/layout/SectionReveal";
@@ -12,7 +12,7 @@ interface AboutProps {
 
 const valueIcons = {
   empathy: Heart,
-  creativity: Sparkles,
+  teamwork: Users,
   commitment: Rocket,
 } as const;
 
@@ -35,7 +35,7 @@ export async function About({ locale }: AboutProps) {
           <span className="h-0.5 w-10 rounded-full bg-primary" aria-hidden />
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-start lg:gap-0">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-0">
           <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-start sm:gap-5 lg:pr-10">
             <div className="flex size-[4.5rem] shrink-0 items-center justify-center rounded-[2rem_1.25rem_2rem_1.5rem] bg-accent sm:size-20">
               <Sprout
@@ -49,7 +49,7 @@ export async function About({ locale }: AboutProps) {
                 {profile.bio[locale]}
               </p>
               <a
-                href="#contact"
+                href="#experience"
                 className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {t("learnMore")}

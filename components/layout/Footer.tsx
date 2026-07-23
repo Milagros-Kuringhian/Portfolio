@@ -23,15 +23,25 @@ export async function Footer() {
           >
             <GitHubIcon className="size-5" />
           </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-md transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            aria-label={t("linkedin")}
-          >
-            <LinkedInIcon className="size-5" />
-          </a>
+          {profile.linkedin ? (
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              aria-label={t("linkedin")}
+            >
+              <LinkedInIcon className="size-5" />
+            </a>
+          ) : (
+            <span
+              className="rounded-md text-muted-foreground/50"
+              aria-label={t("linkedinComingSoon")}
+              title={t("linkedinComingSoon")}
+            >
+              <LinkedInIcon className="size-5" />
+            </span>
+          )}
         </div>
       </div>
     </footer>

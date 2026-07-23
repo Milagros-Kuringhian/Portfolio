@@ -13,14 +13,22 @@ export const skillCategories: SkillCategory[] = [
       es: "Frontend",
       en: "Frontend",
     },
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
+    skills: ["HTML", "CSS", "JavaScript", "Vue", "TypeScript", "React", "Next.js"],
   },
   {
-    id: "tools",
+    id: "cms-ecommerce",
     label: {
-      es: "Herramientas",
-      en: "Tools",
+      es: "CMS / E-commerce",
+      en: "CMS / E-commerce",
     },
-    skills: ["Tailwind CSS", "Git", "Figma", "VS Code", "WordPress", "Elementor"],
+    skills: ["WordPress", "Elementor", "WooCommerce", "Tiendanube"],
+  },
+  {
+    id: "design",
+    label: {
+      es: "Diseño",
+      en: "Design",
+    },
+    skills: ["Figma", "Illustrator", "Photoshop"],
   },
 ];

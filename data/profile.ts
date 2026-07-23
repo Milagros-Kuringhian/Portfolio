@@ -27,19 +27,19 @@ export type Profile = {
 };
 
 export const profile: Profile = {
-  name: "Portfolio",
-  firstName: "Milagros Kuringhian",
+  name: "Milagros Sol Kuringhian",
+  firstName: "Milagros",
   title: {
     es: "Desarrolladora Frontend",
     en: "Frontend Developer",
   },
   tagline: {
-    es: "Creo experiencias web cálidas, accesibles y con atención al detalle.",
-    en: "I build warm, accessible web experiences with attention to detail.",
+    es: "Interfaces claras, e-commerce y soporte digital con atención al detalle.",
+    en: "Clear interfaces, e-commerce, and digital support with attention to detail.",
   },
   bio: {
-    es: "Soy desarrolladora frontend apasionadoa por crear interfaces claras y agradables. Me gusta transformar ideas en productos digitales que se sientan humanos. Busco seguir creciendo en equipos que valoren el diseño, la calidad y el aprendizaje continuo.",
-    en: "I'm a frontend developer passionate about building clear and delightful interfaces. I enjoy turning ideas into digital products that feel human. I'm looking to keep growing in teams that value design, quality, and continuous learning.",
+    es: "Estudiante de Programación y Diseño Web en Escuela Da Vinci, con experiencia en gestión comercial y administración de e-commerce. Me interesa desarrollarme en puestos junior de frontend, e-commerce o soporte digital, combinando lo que aprendo en código con lo que ya vivo en operación digital.",
+    en: "I'm a Web Programming and Design student at Escuela Da Vinci, with experience in commercial management and e-commerce administration. I'm looking for junior roles in frontend, e-commerce, or digital support—combining what I learn in code with hands-on digital operations.",
   },
   availability: {
     es: "Disponible para oportunidades junior y proyectos freelance.",
@@ -47,24 +47,24 @@ export const profile: Profile = {
   },
   image: "/images/avatar-lilac.png",
   email: "milikuri2003@gmail.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  github: "https://github.com/Milagros-Kuringhian",
+  linkedin: "",
   values: [
     {
       id: "empathy",
       label: { es: "Empatía", en: "Empathy" },
       description: {
-        es: "Diseño pensando en las personas que van a usar cada interfaz.",
-        en: "I design with the people who will use each interface in mind.",
+        es: "Diseño y atiendo pensando en las personas que usan cada producto.",
+        en: "I design and support with the people who use each product in mind.",
       },
       tone: "primary",
     },
     {
-      id: "creativity",
-      label: { es: "Creatividad", en: "Creativity" },
+      id: "teamwork",
+      label: { es: "Trabajo en equipo", en: "Teamwork" },
       description: {
-        es: "Busco soluciones visuales claras sin perder funcionalidad.",
-        en: "I look for clear visual solutions without losing functionality.",
+        es: "Me adapto, comunico con claridad y colaboro para avanzar juntas hacia el objetivo.",
+        en: "I adapt, communicate clearly, and collaborate to move forward together toward the goal.",
       },
       tone: "secondary",
     },
@@ -72,8 +72,8 @@ export const profile: Profile = {
       id: "commitment",
       label: { es: "Compromiso", en: "Commitment" },
       description: {
-        es: "Me involucro en cada proyecto con responsabilidad y detalle.",
-        en: "I get involved in every project with responsibility and care.",
+        es: "Organización, responsabilidad y detalle en cada tarea.",
+        en: "Organization, responsibility, and care in every task.",
       },
       tone: "accent",
     },
