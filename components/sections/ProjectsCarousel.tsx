@@ -82,7 +82,7 @@ export function ProjectsCarousel({
             key={project.id}
             data-carousel-item
             className={cn(
-              "snap-start shrink-0",
+              "h-full snap-start shrink-0",
               // 1 + peek | 2 + peek | 3 + peek (~1.25rem)
               "w-[calc(100%-1.25rem)]",
               "sm:w-[calc((100%-1.5rem-1.25rem)/2)]",
