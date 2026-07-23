@@ -60,7 +60,7 @@ export function ProjectsCarousel({
     ).matches;
     el.scrollBy({
       left: direction * delta,
-      behavior: reduceMotion ? "auto" : "smooth",
+      behavior: reduceMotion ? "instant" : "smooth",
     });
   };
 
