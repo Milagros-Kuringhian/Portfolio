@@ -31,7 +31,7 @@ export function Contact() {
           <div className="grid gap-6 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-8">
             <div className="flex min-w-0 flex-col gap-4">
               <div className="flex flex-col gap-3">
-                <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+                <h2 className="font-heading text-4xl tracking-[0.015em] text-foreground uppercase sm:text-5xl">
                   {t("title")}
                 </h2>
                 <span className="h-0.5 w-10 rounded-full bg-accent" aria-hidden />
@@ -53,7 +53,7 @@ export function Contact() {
               <div className="flex items-start gap-3">
                 <Mail className="mt-0.5 size-4 shrink-0 text-secondary dark:text-accent" aria-hidden />
                 <div className="min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <p className="font-label text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                     {t("email")}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-2">
@@ -81,7 +81,7 @@ export function Contact() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-secondary dark:text-accent" aria-hidden />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <p className="font-label text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                     {t("location")}
                   </p>
                   <p className="mt-1 text-sm font-medium text-foreground">

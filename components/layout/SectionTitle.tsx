@@ -22,7 +22,7 @@ export function SectionTitle({
     >
       <div className="flex max-w-2xl flex-col gap-2">
         <div className="flex flex-col gap-2">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="font-heading text-3xl tracking-[0.015em] text-foreground uppercase sm:text-4xl">
             {title}
           </h2>
           <span className="h-0.5 w-10 rounded-full bg-accent" aria-hidden />

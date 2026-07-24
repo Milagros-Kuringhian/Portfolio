@@ -71,7 +71,7 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
           <SectionTitle title={t("allTitle")} subtitle={t("allSubtitle")} />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}

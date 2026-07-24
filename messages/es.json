@@ -34,12 +34,14 @@
     "viewAll": "Ver todos los proyectos",
     "openProject": "Abrir proyecto",
     "viewCode": "Ver código",
+    "download": "Descargar",
     "carouselLabel": "Carrusel de proyectos",
     "prev": "Proyectos anteriores",
     "next": "Más proyectos",
     "allTitle": "Todos los proyectos",
     "allSubtitle": "Listado completo de trabajos de mi portfolio.",
-    "back": "Volver a proyectos"
+    "back": "Volver a proyectos",
+    "statusInProgress": "En proceso"
   },
   "skills": {
     "title": "Habilidades",

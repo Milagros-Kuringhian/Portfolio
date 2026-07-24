@@ -33,7 +33,7 @@ export async function Education({ locale }: EducationProps) {
                   <GraduationCap className="size-4" aria-hidden />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-heading text-base font-semibold text-foreground">
+                  <h3 className="font-label text-sm font-semibold uppercase tracking-[0.06em] text-foreground sm:text-base">
                     {item.degree[locale]}
                   </h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">

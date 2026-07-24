@@ -21,7 +21,7 @@ export async function Skills({ locale }: SkillsProps) {
         <div className="flex flex-col gap-5 md:gap-6">
           {skillCategories.map((category, index) => (
             <div key={category.id} className="flex flex-col gap-2.5">
-              <h3 className="text-center text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+              <h3 className="font-label text-center text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 {category.label[locale]}
               </h3>
               <div

@@ -30,7 +30,7 @@ export async function About({ locale }: AboutProps) {
     <SectionReveal id="about" className="section-padding-about flex flex-col justify-center">
       <div className="section-inner gap-5 md:gap-7">
         <div className="flex flex-col gap-2">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="font-heading text-3xl tracking-[0.015em] text-foreground uppercase sm:text-4xl">
             {t("title")}
           </h2>
           <span className="h-0.5 w-10 rounded-full bg-accent" aria-hidden />
@@ -88,7 +88,7 @@ export async function About({ locale }: AboutProps) {
                     <Icon className="size-4" aria-hidden />
                   </span>
                   <div className="min-w-0 pt-0.5">
-                    <h3 className="font-heading text-base font-semibold text-foreground">
+                    <h3 className="font-label text-sm font-semibold uppercase tracking-[0.08em] text-foreground">
                       {value.label[locale]}
                     </h3>
                     <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">

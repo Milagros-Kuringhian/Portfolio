@@ -93,7 +93,7 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <a
           href="#hero"
-          className="shrink-0 font-heading text-base font-semibold tracking-tight text-foreground transition-colors hover:text-secondary md:text-lg"
+          className="font-heading shrink-0 text-xl tracking-[0.02em] text-foreground uppercase transition-colors hover:text-secondary md:text-2xl"
           aria-label={tA11y("homeLink")}
         >
           {profile.firstName}

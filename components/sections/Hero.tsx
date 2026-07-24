@@ -83,11 +83,11 @@ export async function Hero({ locale }: HeroProps) {
     >
       <div className="relative z-10 flex w-full min-w-0 flex-[1_1_52%] flex-col gap-6 md:max-w-[52%] md:gap-7">
         <div className="flex flex-col gap-4 md:gap-5">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground sm:text-xs">
+          <p className="font-label text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground sm:text-xs">
             {profile.title[locale]}
           </p>
 
-          <h1 className="font-heading text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-[2.65rem] lg:text-[2.85rem]">
+          <h1 className="font-heading text-4xl leading-[0.95] tracking-[0.015em] text-foreground uppercase sm:text-5xl md:text-[3.25rem] lg:text-[3.5rem]">
             {t.rich("headline", {
               highlight: (chunks) => (
                 <span className="text-secondary dark:text-accent">{chunks}</span>

@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { Download } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { GitHubIcon } from "@/components/icons/social";
@@ -30,12 +31,14 @@ export function ProjectCard({
   accentIndex = 0,
 }: ProjectCardProps) {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("projects");
   const tA11y = useTranslations("accessibility");
   const externalLabel = tA11y("opensInNewTab");
   const primaryTag = project.tech[0];
   const preview = project.preview ?? "window";
   const title = project.title[locale];
   const hasLiveUrl = Boolean(project.liveUrl);
+  const isInProgress = project.status === "in-progress";
 
   const imageMotionClass = cn(
     !shouldReduceMotion &&
@@ -96,7 +99,7 @@ export function ProjectCard({
               transition: { duration: 0.2 },
             }
       }
-      className="group h-full"
+      className="group h-full w-full"
     >
       <div
         className={cn(
@@ -126,10 +129,17 @@ export function ProjectCard({
 
         <div className="pointer-events-none relative flex flex-1 flex-col gap-2.5 p-4 sm:p-5">
           <div className="flex flex-col gap-1.5">
-            <h3 className="font-heading text-lg font-semibold text-foreground sm:text-xl">
-              {title}
-            </h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
+              <h3 className="font-label line-clamp-1 text-lg font-semibold uppercase tracking-[0.06em] text-foreground sm:text-xl">
+                {title}
+              </h3>
+              {isInProgress ? (
+                <span className="font-label shrink-0 rounded-full bg-accent/25 px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-secondary dark:text-accent">
+                  {t("statusInProgress")}
+                </span>
+              ) : null}
+            </div>
+            <p className="line-clamp-3 min-h-[4.25rem] text-sm leading-relaxed text-muted-foreground">
               {project.description[locale]}
             </p>
           </div>
@@ -137,14 +147,14 @@ export function ProjectCard({
           {primaryTag ? (
             <Badge
               variant={tagVariants[accentIndex % tagVariants.length]}
-              className="w-fit rounded-full px-3 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider"
+              className="font-label w-fit rounded-full px-3 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.14em]"
             >
               {primaryTag}
             </Badge>
           ) : null}
 
-          {project.githubUrl ? (
-            <div className="pointer-events-auto relative z-[2] mt-auto flex flex-wrap gap-2 pt-2">
+          <div className="pointer-events-auto relative z-[2] mt-auto flex min-h-9 flex-wrap gap-2 pt-2">
+            {project.githubUrl ? (
               <Button
                 variant="outline"
                 size="sm"
@@ -161,8 +171,26 @@ export function ProjectCard({
                 <GitHubIcon className="size-4" data-icon="inline-start" />
                 {viewCodeLabel}
               </Button>
-            </div>
-          ) : null}
+            ) : null}
+            {project.downloadUrl ? (
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-full border-secondary/80"
+                render={
+                  <a
+                    href={project.downloadUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${t("download")} ${externalLabel}`}
+                  />
+                }
+              >
+                <Download className="size-4" data-icon="inline-start" />
+                {t("download")}
+              </Button>
+            ) : null}
+          </div>
         </div>
       </div>
     </motion.article>

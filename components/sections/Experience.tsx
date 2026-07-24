@@ -42,7 +42,7 @@ export async function Experience({ locale }: ExperienceProps) {
                 <p className="text-sm font-medium text-secondary dark:text-accent">
                   {item.period[locale]}
                 </p>
-                <h3 className="font-heading text-lg font-semibold text-foreground sm:text-xl">
+                <h3 className="font-label text-lg font-semibold uppercase tracking-[0.06em] text-foreground sm:text-xl">
                   {item.role[locale]}
                 </h3>
                 <p className="text-sm font-medium text-muted-foreground">

@@ -8,8 +8,11 @@ export type Project = {
   tech: string[];
   liveUrl?: string;
   githubUrl?: string;
+  /** External file / Drive download (e.g. WordPress export zip). */
+  downloadUrl?: string;
   /** How the preview image is framed in the card. Defaults to `"window"`. */
   preview?: "window" | "phone";
+  status?: "in-progress";
 };
 
 export const projects: Project[] = [
@@ -42,6 +45,7 @@ export const projects: Project[] = [
     tech: ["Astro", "Vue", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://resina-x-chechi.vercel.app",
     githubUrl: "https://github.com/Milagros-Kuringhian/Resina-x-Chechi",
+    status: "in-progress",
   },
   {
     id: "gestor-de-gastos",
@@ -70,5 +74,7 @@ export const projects: Project[] = [
     },
     image: "/images/tienda-mate.png",
     tech: ["WordPress", "WooCommerce", "Elementor", "Blocksy"],
+    downloadUrl:
+      "https://drive.google.com/file/d/1S-5nqfrA_hLPaTakDlGLbvB3tgAIWrBl/view?usp=drive_link",
   },
 ];

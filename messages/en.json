@@ -34,12 +34,14 @@
     "viewAll": "View all projects",
     "openProject": "Open project",
     "viewCode": "View code",
+    "download": "Download",
     "carouselLabel": "Projects carousel",
     "prev": "Previous projects",
     "next": "More projects",
     "allTitle": "All projects",
     "allSubtitle": "Full list of work from my portfolio.",
-    "back": "Back to projects"
+    "back": "Back to projects",
+    "statusInProgress": "In progress"
   },
   "skills": {
     "title": "Skills",

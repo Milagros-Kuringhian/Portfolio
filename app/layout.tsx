@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
-import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import { Barlow_Condensed, Bebas_Neue, Inter } from "next/font/google";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const bebasNeue = Bebas_Neue({
+  weight: "400",
   variable: "--font-display",
+  subsets: ["latin"],
+});
+
+const barlowCondensed = Barlow_Condensed({
+  weight: ["600", "700"],
+  variable: "--font-label",
   subsets: ["latin"],
 });
 
@@ -33,7 +40,7 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${dmSans.variable} ${plusJakarta.variable} h-full antialiased`}
+      className={`${inter.variable} ${bebasNeue.variable} ${barlowCondensed.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-hidden bg-background">
         <ThemeProvider>{children}</ThemeProvider>
